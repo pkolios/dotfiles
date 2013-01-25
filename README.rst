@@ -18,3 +18,7 @@ Uninstall dotfiles
 
     cd ~/.dotfiles
     make clean
+
+Notes
+-----
+#. **ZSH**: `oh-my-zsh installation instructions <https://gist.github.com/1498393>`_
