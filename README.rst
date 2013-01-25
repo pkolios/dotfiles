@@ -1,16 +1,18 @@
 .dotfiles
 =========
 
-Install
--------
+Install dotfiles
+----------------
+In the home dir
 
 ::
 
+    git clone git@github.com:pkolios/.dotfiles.git ./dotfiles
     cd ~/.dotfiles
     make
 
-Uninstall
----------
+Uninstall dotfiles
+------------------
 
 ::
 
