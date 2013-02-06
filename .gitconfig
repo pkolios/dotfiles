@@ -1,0 +1,9 @@
+[user]
+	name = Paris Kolios
+	email = paris.k@gmail.com
+[core]
+	editor = vim
+[color]
+	ui = true
+[github]
+	user = pkolios
