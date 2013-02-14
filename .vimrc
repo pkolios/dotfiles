@@ -7,6 +7,9 @@ set bs=2
 " Show leader command
 set showcmd
 
+" Yank to system clipboard
+set clipboard=unnamedplus
+
 " Show whitespace
 " MUST be inserted BEFORE the colorscheme command
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
