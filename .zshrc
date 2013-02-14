@@ -45,3 +45,5 @@ export WORKON_HOME=~/projects/virtualenvs
 export PROJECT_HOME=~/projects
 
 . /usr/local/bin/virtualenvwrapper.sh
+
+alias pycleaner="find . -name \"*.pyc\" -exec rm -rf {} \;"
