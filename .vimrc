@@ -88,17 +88,12 @@ let g:pymode_syntax_builtin_objs = 0
 let g:pymode_syntax_builtin_funcs = 0
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
-" Tab word completion
-" mkdir -p ~/.vim/supertab
-" wget https://github.com/ervandew/supertab/raw/master/plugin/supertab.vim
-
 " Python folding
 " mkdir -p ~/.vim/ftplugin
 " wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
 set nofoldenable
 
-
-"tab completion of words in insert mode
+" tab completion of words in insert mode
 function InsertTabWrapper()
       let col = col('.') - 1
       if !col || getline('.')[col - 1] !~ '\k'
@@ -109,3 +104,6 @@ function InsertTabWrapper()
 endfunction
 
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+
+" Paste toggle (for indentation when pasting)
+set pastetoggle=<leader>p
