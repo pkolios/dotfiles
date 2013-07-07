@@ -4,6 +4,7 @@ install:
 	! -path ~/.dotfiles/ \
 	! -path ~/.dotfiles/.git \
 	! -path ~/.dotfiles/.gitignore \
+	! -path ~/.dotfiles/.gitmodules \
 	-name '.*' -exec ln -sf {} $$HOME \;                                        
                                                                                 
 clean:                                                                          
