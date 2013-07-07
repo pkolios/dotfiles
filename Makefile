@@ -10,3 +10,7 @@ install:
 clean:                                                                          
 	echo "Removing links from home dir..."                                      
 	find ~ -maxdepth 1 -lname "$$HOME/.dotfiles/*" -delete
+
+update:
+	echo "Updating submodules..."
+	git submodule foreach git pull
