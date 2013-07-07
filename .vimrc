@@ -1,6 +1,11 @@
 " Auto reload .vimrc
 autocmd! bufwritepost .vimrc source %
 
+" Theme
+colorscheme molokai 
+let g:molokai_original = 1
+let g:rehash256 = 1
+
 " Normal backspace
 set bs=2
 
@@ -90,5 +95,3 @@ endfunction
 
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
-colorscheme hemisu
-set background=dark
