@@ -54,7 +54,7 @@ set ruler
 
 " Intuitive backspacing in insert mode
 set backspace=indent,eol,start
- 
+
 " File-type highlighting and configuration.
 " Run :filetype (without args) to see what you may have
 " to turn on yourself, or just set them all to be sure.
@@ -62,7 +62,7 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
- 
+
 " Highlight search terms...
 set hlsearch
 set incsearch " ...dynamically as they are typed.
@@ -71,10 +71,14 @@ set incsearch " ...dynamically as they are typed.
 " content of the active window
 set autochdir
 
+" highlight tabs and trailing spaces
+set listchars=tab:>-,trail:~
+set list
+
 set nowrap  " don't automatically wrap on load
 set fo-=t   " don't automatically wrap text when typing
 set colorcolumn=80
-highlight ColorColumn guibg=#2d2d2d ctermbg=246
+highlight ColorColumn ctermbg=236
 
 " Real programmers don't use TABs but spaces
 set tabstop=4
