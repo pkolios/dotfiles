@@ -1,3 +1,6 @@
+" no compatibility mode
+set nocompatible
+
 " Auto reload .vimrc
 autocmd! bufwritepost .vimrc source %
 
@@ -43,7 +46,10 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Pathogen plugin loader
-execute pathogen#infect()
+call pathogen#infect()
+
+" auto import helptags
+call pathogen#helptags()
 
 " Scroll the viewport faster
 nnoremap <C-e> 3<C-e>
@@ -116,3 +122,8 @@ set wildignore+=*/coverage/*
 
 " Python breakpoint shortcut
 map <Leader>b oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+
+" Airline settings
+set laststatus=2
+let g:airline_enable_syntastic=1
+let g:airline_theme='dark'
