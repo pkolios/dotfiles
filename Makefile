@@ -1,4 +1,8 @@
 install:                                                                        
+	echo "Installing submodules..."
+	git submodule init
+	git submodule update
+	git submodule foreach git checkout master
 	echo "Creating links from .dotfiles to home dir..."
 	find ~/.dotfiles -maxdepth 1 -name '.*' \
 	! -path ~/.dotfiles/ \
