@@ -1,5 +1,19 @@
-" no compatibility mode
-set nocompatible
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'bling/vim-airline'
+
+filetype plugin indent on     " required!
 
 " Auto reload .vimrc
 autocmd! bufwritepost .vimrc source %
@@ -8,6 +22,9 @@ autocmd! bufwritepost .vimrc source %
 colorscheme molokai
 let g:molokai_original = 1
 let g:rehash256 = 1
+
+" Syntax highlighting
+syntax on
 
 " Normal backspace
 set bs=2
@@ -45,12 +62,6 @@ set scrolloff=3
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-" Pathogen plugin loader
-call pathogen#infect()
-
-" auto import helptags
-call pathogen#helptags()
-
 " Scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
@@ -60,14 +71,6 @@ set ruler
 
 " Intuitive backspacing in insert mode
 set backspace=indent,eol,start
-
-" File-type highlighting and configuration.
-" Run :filetype (without args) to see what you may have
-" to turn on yourself, or just set them all to be sure.
-syntax on
-filetype on
-filetype plugin on
-filetype indent on
 
 " Highlight search terms...
 set hlsearch
@@ -93,9 +96,6 @@ set shiftwidth=4
 set shiftround
 set expandtab
 
-" Paste toggle (for indentation when pasting)
-set pastetoggle=<leader>p
-
 " tab completion of words in insert mode
 function InsertTabWrapper()
       let col = col('.') - 1
@@ -110,9 +110,6 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " Paste toggle (for indentation when pasting)
 set pastetoggle=<leader>p
-
-" Python-mode no folding by default
-set nofoldenable
 
 " Settings for ctrlp
 let g:ctrlp_max_height = 30
