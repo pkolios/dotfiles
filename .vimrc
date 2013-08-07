@@ -12,6 +12,7 @@ Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'bling/vim-airline'
+Bundle 'kien/rainbow_parentheses.vim'
 
 filetype plugin indent on     " required!
 
@@ -124,3 +125,12 @@ map <Leader>b oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 set laststatus=2
 let g:airline_enable_syntastic=1
 let g:airline_theme='dark'
+
+" Put all autocmds in some augroup and use au! to clear the group.
+augroup vimrc_autocmds
+  au!
+  au VimEnter * RainbowParenthesesToggle
+  au Syntax * RainbowParenthesesLoadRound
+  au Syntax * RainbowParenthesesLoadSquare
+  au Syntax * RainbowParenthesesLoadBraces
+augroup END
