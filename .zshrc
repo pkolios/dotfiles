@@ -49,3 +49,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/pgsql-9.1/bin
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
