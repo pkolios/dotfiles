@@ -13,6 +13,9 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'bling/vim-airline'
 Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'guns/vim-clojure-static'
+Bundle 'tpope/vim-fireplace'
+Bundle 'tpope/vim-classpath'
 
 filetype plugin indent on     " required!
 
