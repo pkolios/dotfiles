@@ -59,6 +59,9 @@ set title
 " Maintain more context around the cursor
 set scrolloff=3
 
+" yank and paste with the system clipboard
+set clipboard=unnamed
+
 " Store temporary files in a central spot
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
