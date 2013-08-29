@@ -36,9 +36,6 @@ set bs=2
 " Show leader command
 set showcmd
 
-" Allow vim to manage multiple buffers
-set hidden
-
 " Map leader key to ,
 let mapleader = ","
 
@@ -53,7 +50,7 @@ runtime macros/matchit.vim
 set wildmode=list:longest,full
 
 " Use case-smart searching
-set ignorecase 
+set ignorecase
 set smartcase
 
 " Set the terminal title
@@ -85,8 +82,8 @@ set incsearch " ...dynamically as they are typed.
 set autochdir
 
 " highlight tabs and trailing spaces
-set listchars=tab:>-,trail:~
 set list
+set listchars=tab:▸\ ,trail:▫
 
 set nowrap  " don't automatically wrap on load
 set fo-=t   " don't automatically wrap text when typing
