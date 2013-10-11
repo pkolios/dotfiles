@@ -215,7 +215,7 @@
 	<key>UseBrightBold</key>
 	<true/>
 	<key>columnCount</key>
-	<integer>115</integer>
+	<integer>160</integer>
 	<key>name</key>
 	<string>HemisuDark</string>
 	<key>rowCount</key>
