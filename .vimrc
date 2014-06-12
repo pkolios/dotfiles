@@ -17,6 +17,9 @@ Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-classpath'
 
+" Go syntax highlighting
+set rtp+=$GOROOT/misc/vim
+
 filetype plugin indent on     " required!
 
 " Auto reload .vimrc
