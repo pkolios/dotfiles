@@ -15,18 +15,16 @@ Bundle 'bling/vim-airline'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'klen/python-mode'
 
-" Go syntax highlighting
-set rtp+=$GOROOT/misc/vim
-
 filetype plugin indent on     " required!
 
 " Auto reload .vimrc
 autocmd! bufwritepost .vimrc source %
 
 " Theme
-colorscheme molokai
-let g:molokai_original = 1
-let g:rehash256 = 1
+" colorscheme molokai
+" let g:molokai_original = 1
+" let g:rehash256 = 1
+colorscheme hybrid_reverse
 
 " Syntax highlighting
 syntax on
@@ -146,7 +144,7 @@ let g:pymode_folding = 0
 " Airline settings
 set laststatus=2
 let g:airline_enable_syntastic=1
-let g:airline_theme='dark'
+let g:airline_theme='base16'
 
 " Put all autocmds in some augroup and use au! to clear the group.
 augroup vimrc_autocmds
