@@ -43,13 +43,12 @@ setopt APPEND_HISTORY
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew pip python virtualenvwrapper terminalapp)
+plugins=(git mercurial brew pip python virtualenvwrapper terminalapp)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH
-export PYTHONPATH=/usr/local/Cellar/opencv/2.4.7.1/lib/python2.7/site-packages:$PYTHONPATH
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
