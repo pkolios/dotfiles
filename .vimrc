@@ -145,6 +145,10 @@ let g:pymode_folding = 0
 set laststatus=2
 let g:airline_enable_syntastic=1
 let g:airline_theme='base16'
+let g:airline_detect_modified=1
+let g:airline_detect_paste=1
+let g:airline_inactive_collapse=1
+let g:airline_exclude_preview =1
 
 " Put all autocmds in some augroup and use au! to clear the group.
 augroup vimrc_autocmds
