@@ -1,9 +1,16 @@
 [user]
-	name = Paris Kolios
-	email = paris.k@gmail.com
+    name = Paris Kolios
+    email = paris.k@gmail.com
 [core]
-	editor = vim
+    editor = vim
 [color]
-	ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
 [github]
-	user = pkolios
+    user = pkolios
+[alias]
+    co = checkout
+    st = status
+    gl = log --graph --all --decorate --date=relative
