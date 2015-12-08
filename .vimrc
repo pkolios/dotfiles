@@ -118,6 +118,9 @@ set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
+" Syntastic ignore python
+let g:syntastic_ignore_files = ['\.py$']
+
 " Python breakpoint shortcut
 map <Leader>b oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
