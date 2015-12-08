@@ -11,12 +11,12 @@ install:
 	! -path ~/.dotfiles/.gitignore \
 	! -path ~/.dotfiles/.gitmodules \
 	-name '.*' -exec ln -sf {} $$HOME \;
+	find ~/.dotfiles -maxdepth 1 -name 'HemisuDark.terminal' -exec \
+	cp {} $$HOME/ \;
 	echo "Installing vundle..."
 	git clone https://github.com/gmarik/vundle.git .vim/bundle/vundle
 	echo "Installing vim plugins..."
-	vim +BundleInstall +qall
-	find ~/.dotfiles -maxdepth 1 -name 'HemisuDark.terminal' -exec \
-	cp {} $$HOME/ \;
+	vim -c "PluginInstall! "
 
 uninstall:
 	echo "Removing links from home dir..."
@@ -28,4 +28,4 @@ uninstall:
 
 
 update:
-	vim +BundleInstall +qall
+	vim -c "PluginInstall! "

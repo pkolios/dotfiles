@@ -21,9 +21,6 @@ filetype plugin indent on     " required!
 autocmd! bufwritepost .vimrc source %
 
 " Theme
-" colorscheme molokai
-" let g:molokai_original = 1
-" let g:rehash256 = 1
 colorscheme hybrid_reverse
 
 " Syntax highlighting
@@ -116,6 +113,7 @@ set pastetoggle=<leader>p
 
 " Settings for ctrlp
 let g:ctrlp_max_height = 30
+let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
@@ -124,27 +122,35 @@ set wildignore+=*/coverage/*
 map <Leader>b oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " Python mode settings
+let g:pymode = 1
+let g:pymode_python = 'python'
 let g:pymode_rope = 0
-" Documentation
 let g:pymode_doc = 0
-"Linting
+let g:pymode_virtualenv = 0
 let g:pymode_lint = 1
-" Auto check on save
-let g:pymode_lint_write = 1
-" Enable breakpoints plugin
+let g:pymode_lint_unmodified = 1
+let g:pymode_options_max_line_length = 79
 let g:pymode_breakpoint = 0
-" syntax highlighting
+let g:pymode_indent = 1
 let g:pymode_syntax = 1
 let g:pymode_syntax_all = 1
+let g:pymode_syntax_print_as_function = 0
+let g:pymode_syntax_highlight_self = g:pymode_syntax_all
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
-" Don't autofold code
+let g:pymode_syntax_string_formatting = g:pymode_syntax_all
+let g:pymode_syntax_string_format = g:pymode_syntax_all
+let g:pymode_syntax_string_templates = g:pymode_syntax_all
+let g:pymode_syntax_doctests = g:pymode_syntax_all
+let g:pymode_syntax_builtin_objs = g:pymode_syntax_all
+let g:pymode_syntax_builtin_types = g:pymode_syntax_all
+let g:pymode_syntax_highlight_exceptions = g:pymode_syntax_all
+let g:pymode_syntax_docstrings = g:pymode_syntax_all
 let g:pymode_folding = 0
 
 " Airline settings
 set laststatus=2
-let g:airline_enable_syntastic=1
-let g:airline_theme='base16'
+let g:airline_theme='bubblegum'
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
 let g:airline_inactive_collapse=1
