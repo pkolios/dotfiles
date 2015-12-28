@@ -1,3 +1,5 @@
+.PHONY: install uninstall update
+
 install:
 	echo "Installing oh-my-zsh..."
 	curl -L http://install.ohmyz.sh | sh
