@@ -14,6 +14,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'bling/vim-airline'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'klen/python-mode'
+Bundle 'majutsushi/tagbar'
 
 filetype plugin indent on     " required!
 
@@ -78,7 +79,7 @@ set incsearch " ...dynamically as they are typed.
 
 " current directory is always matching the
 " content of the active window
-set autochdir
+"set autochdir
 
 " highlight tabs and trailing spaces
 set list
@@ -167,3 +168,19 @@ augroup vimrc_autocmds
   au Syntax * RainbowParenthesesLoadSquare
   au Syntax * RainbowParenthesesLoadBraces
 augroup END
+
+" Remap Q W and E to q w e
+if has("user_commands")
+    command! -bang -nargs=? -complete=file E e<bang> <args>
+    command! -bang -nargs=? -complete=file W w<bang> <args>
+    command! -bang -nargs=? -complete=file Wq wq<bang> <args>
+    command! -bang -nargs=? -complete=file WQ wq<bang> <args>
+    command! -bang Wa wa<bang>
+    command! -bang WA wa<bang>
+    command! -bang Q q<bang>
+    command! -bang QA qa<bang>
+    command! -bang Qa qa<bang>
+endif
+
+" Tagbar
+map <leader>t :TagbarToggle<CR>
