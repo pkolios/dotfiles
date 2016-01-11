@@ -1,6 +1,0 @@
-- Automate font installation
-    - maybe use homebrew font casks
-- Automate terminal settings installation
-- Cleanup vim plugins & configuration
-- Redo git / hg config
-    - add nice graph log

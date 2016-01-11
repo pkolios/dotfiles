@@ -52,9 +52,11 @@ set smartcase
 
 " Set the terminal title
 set title
+set titleold="Terminal"
+set titlestring=%F
 
 " Maintain more context around the cursor
-set scrolloff=3
+set scrolloff=5
 
 " yank and paste with the system clipboard
 set clipboard=unnamed
@@ -81,6 +83,9 @@ set incsearch " ...dynamically as they are typed.
 " content of the active window
 "set autochdir
 
+" Autoresize windows when Vim is resized
+autocmd VimResized * :wincmd =
+
 " highlight tabs and trailing spaces
 set list
 set listchars=tab:▸\ ,trail:▫
@@ -96,6 +101,13 @@ set softtabstop=4
 set shiftwidth=4
 set shiftround
 set expandtab
+
+" utf-8 default encoding
+set enc=utf-8
+
+" don't bell or blink
+set noerrorbells
+set vb t_vb=
 
 " tab completion of words in insert mode
 function InsertTabWrapper()
@@ -121,6 +133,8 @@ set wildignore+=*/coverage/*
 
 " Syntastic ignore python
 let g:syntastic_ignore_files = ['\.py$']
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_check_on_open=1
 
 " Python breakpoint shortcut
 map <Leader>b oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
