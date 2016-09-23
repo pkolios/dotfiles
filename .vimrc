@@ -195,6 +195,8 @@ if has("user_commands")
     command! -bang Q q<bang>
     command! -bang QA qa<bang>
     command! -bang Qa qa<bang>
+    command! -bang Wqa wqa<bang>
+    command! -bang WQa wqa<bang>
 endif
 
 " Tagbar
