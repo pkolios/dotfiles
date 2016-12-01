@@ -1,1 +1,1 @@
-alias pycleaner="find . -name \"*.pyc\" -exec rm -rf {} \;"
+alias pycleaner="pyclean .;"
