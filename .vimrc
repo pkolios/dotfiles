@@ -138,7 +138,7 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_check_on_open=1
 
 " Python breakpoint shortcut
-map <Leader>b oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+map <Leader>b oimport ipdb; ipdb.set_trace()  # BREAKPOINT<C-c>
 
 " Python mode settings
 let g:pymode = 1
