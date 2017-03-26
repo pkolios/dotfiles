@@ -1,22 +1,20 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=$HOME/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " My Bundles here:
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'bling/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'klen/python-mode'
-Bundle 'majutsushi/tagbar'
+Plugin 'itchyny/lightline.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'klen/python-mode'
 
+call vundle#end()
 filetype plugin indent on     " required!
 
 " Auto reload .vimrc
@@ -125,6 +123,9 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 " Paste toggle (for indentation when pasting)
 set pastetoggle=<leader>p
 
+" Enable lightline
+set laststatus=2
+
 " Settings for ctrlp
 let g:ctrlp_max_height = 30
 let g:ctrlp_working_path_mode = 'ra'
@@ -167,23 +168,6 @@ let g:pymode_syntax_highlight_exceptions = g:pymode_syntax_all
 let g:pymode_syntax_docstrings = g:pymode_syntax_all
 let g:pymode_folding = 0
 
-" Airline settings
-set laststatus=2
-let g:airline_theme='bubblegum'
-let g:airline_detect_modified=1
-let g:airline_detect_paste=1
-let g:airline_inactive_collapse=1
-let g:airline_exclude_preview =1
-
-" Put all autocmds in some augroup and use au! to clear the group.
-augroup vimrc_autocmds
-  au!
-  au VimEnter * RainbowParenthesesToggle
-  au Syntax * RainbowParenthesesLoadRound
-  au Syntax * RainbowParenthesesLoadSquare
-  au Syntax * RainbowParenthesesLoadBraces
-augroup END
-
 " Remap Q W and E to q w e
 if has("user_commands")
     command! -bang -nargs=? -complete=file E e<bang> <args>
@@ -198,6 +182,3 @@ if has("user_commands")
     command! -bang Wqa wqa<bang>
     command! -bang WQa wqa<bang>
 endif
-
-" Tagbar
-map <leader>t :TagbarToggle<CR>
