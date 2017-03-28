@@ -10,9 +10,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 " My Bundles here:
 Plugin 'itchyny/lightline.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'klen/python-mode'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'python-mode/python-mode'
 
 call vundle#end()
 filetype plugin indent on     " required!
@@ -125,6 +125,8 @@ set pastetoggle=<leader>p
 
 " Enable lightline
 set laststatus=2
+" Hide default vim mode info
+set noshowmode
 
 " Settings for ctrlp
 let g:ctrlp_max_height = 30
