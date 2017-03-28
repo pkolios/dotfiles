@@ -9,6 +9,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " My Bundles here:
+Plugin 'kristijanhusak/vim-hybrid-material'
+Plugin 'jacoborus/tender.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-syntastic/syntastic'
@@ -20,11 +22,26 @@ filetype plugin indent on     " required!
 " Auto reload .vimrc
 autocmd! bufwritepost .vimrc source %
 
-" Theme
-colorscheme hybrid_reverse
-
 " Syntax highlighting
 syntax on
+
+" Theme
+" set background=dark
+" colorscheme hybrid_reverse
+syntax enable
+colorscheme tender
+" fix seargh highlight
+hi Search ctermfg=235 ctermbg=15 cterm=NONE
+" Custom Highlighting
+augroup myhighlight
+    autocmd BufRead,BufNewFile * syn match Braces /[(){}]/
+    autocmd BufRead,BufNewFile * syn match javaScriptOpSymbols "=\{1,3}\|!==\|!=\|<\|>\|>=\|<=\|++\|+=\|--\|-="
+    autocmd BufRead,BufNewFile * syn match javaScriptEndColons "[;,]"
+    autocmd BufRead,BufNewFile * syn match javaScriptLogicSymbols "\(&&\)\|\(||\)"
+augroup END
+hi Braces ctermfg=153 ctermbg=NONE cterm=NONE
+hi pythonDottedName ctermfg=185 ctermbg=NONE cterm=NONE
+hi pythonFunction ctermfg=185 ctermbg=NONE cterm=NONE
 
 " Normal backspace
 set bs=2
@@ -56,9 +73,13 @@ set titlestring=%F
 
 " Maintain more context around the cursor
 set scrolloff=5
+set cursorline          " highlight current line
 
 " yank and paste with the system clipboard
 set clipboard=unnamed
+
+" redraw only when we need to.
+set lazyredraw
 
 " Store temporary files in a central spot
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -67,6 +88,9 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 " Scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
+
+" bind leader+g to grep word under cursor
+map <Leader>g :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Enable limited line numbering
 set ruler
@@ -103,6 +127,7 @@ set expandtab
 
 " utf-8 default encoding
 set enc=utf-8
+set encoding=utf-8
 
 " don't bell or blink
 set noerrorbells
@@ -125,6 +150,9 @@ set pastetoggle=<leader>p
 
 " Enable lightline
 set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'tender'
+      \ }
 " Hide default vim mode info
 set noshowmode
 
@@ -140,8 +168,28 @@ let g:syntastic_ignore_files = ['\.py$']
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_check_on_open=1
 
+" The ripgrep
+if executable('rg')
+  " Use rg over grep
+  set grepprg=rg\ --no-heading\ --vimgrep\ --smart-case
+  " Use rg in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  " rg is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" automatically open the location/quickfix window
+augroup myvimrc
+    autocmd!
+    autocmd QuickFixCmdPost [^l]* cwindow
+    autocmd QuickFixCmdPost l*    lwindow
+augroup END
+
 " Python breakpoint shortcut
 map <Leader>b oimport ipdb; ipdb.set_trace()  # BREAKPOINT<C-c>
+
+" Python syntax settings
+let python_highlight_all = 1
 
 " Python mode settings
 let g:pymode = 1

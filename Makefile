@@ -39,4 +39,5 @@ uninstall:
 update:
 	brew update
 	brew upgrade
+	vim +PluginClean +qall
 	vim +PluginInstall +qall
