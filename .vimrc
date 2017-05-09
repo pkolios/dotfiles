@@ -163,10 +163,16 @@ set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
-" Syntastic ignore python
-let g:syntastic_ignore_files = ['\.py$']
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_check_on_open=1
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " The ripgrep
 if executable('rg')
@@ -193,12 +199,11 @@ let python_highlight_all = 1
 
 " Python mode settings
 let g:pymode = 1
-let g:pymode_python = 'python'
+let g:pymode_python = 'python3'
 let g:pymode_rope = 0
 let g:pymode_doc = 0
 let g:pymode_virtualenv = 0
-let g:pymode_lint = 1
-let g:pymode_lint_unmodified = 1
+let g:pymode_lint = 0
 let g:pymode_options_max_line_length = 79
 let g:pymode_breakpoint = 0
 let g:pymode_indent = 1
