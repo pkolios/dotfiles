@@ -1,3 +1,4 @@
 #!/bin/bash
 
-sudo cp ~/.dotfiles/monoid-font/*.ttf /Library/Fonts/
+brew tap sscotth/monoid
+brew cask install font-monoid-nocalt
