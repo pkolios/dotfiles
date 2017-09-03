@@ -1,1 +1,0 @@
-alias pycleaner="pyclean .;"

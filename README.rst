@@ -18,11 +18,3 @@ Update dotfiles
 
     cd ~/.dotfiles
     make update
-
-Uninstall dotfiles
-------------------
-
-::
-
-    cd ~/.dotfiles
-    make clean

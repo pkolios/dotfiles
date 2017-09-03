@@ -1,18 +1,22 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="enc"
+
+# Load the shell dotfiles, and then some:
+# * ~/.mix-path can be used to extend `$PATH`.
+# * ~/.mix-extra can be used for other settings you don’t want to commit to your repo.
+for file in ~/.zsh/{path,exports,aliases,functions}; do
+	[ -r "$file" ] && source "$file"
+done
+unset file
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Every terminal tab has it's own history instead of sharing a common one
 setopt APPEND_HISTORY
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -33,7 +37,7 @@ setopt APPEND_HISTORY
 # DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
@@ -43,12 +47,6 @@ setopt APPEND_HISTORY
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew pip python terminalapp docker)
+plugins=(git brew pip python terminalapp docker docker-compose zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH
-
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
