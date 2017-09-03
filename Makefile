@@ -15,6 +15,7 @@ setup-scripts:
 	sh scripts/setup-zsh.sh
 	sh scripts/setup-terminal.sh
 	sh scripts/setup-vim.sh
+	sh scripts/setup-docker.sh
 
 update:
 	brew update

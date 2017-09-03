@@ -13,7 +13,10 @@ pip2 install --upgrade pip setuptool
 pip3 install --upgrade pip setuptool
 
 # Docker
-brew install docker docker-machine docker-compose
+brew install docker
+brew install docker-machine
+brew install docker-compose
+brew install docker-machine-nfs
 
 # The rest
 brew install ripgrep
