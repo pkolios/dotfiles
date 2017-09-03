@@ -18,8 +18,12 @@ setup-scripts:
 	sh scripts/setup-docker.sh
 
 update:
-	brew update
-	brew upgrade
+	brew -v update
+	brew upgrade --force-bottle --cleanup
+	brew cleanup
+	brew cask cleanup
+	brew prune
+	brew doctor
 	vim +PluginClean +qall
 	vim +PluginInstall +qall
 
