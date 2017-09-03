@@ -21,7 +21,7 @@ brew install docker-machine-nfs
 # The rest
 brew install ripgrep
 brew install tree
-brew install vim
+brew install vim --with-python3
 brew install wget
 
 # Remove outdated versions from the cellar.
