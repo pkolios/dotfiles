@@ -1,3 +1,6 @@
+PATH  := /usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+SHELL := /bin/bash
+
 .PHONY: install install-scripts setup-scripts update extras
 
 install: install-scripts setup-scripts
