@@ -3,6 +3,7 @@
     email = paris.k@gmail.com
 [core]
     editor = vim
+    excludesfile = ~/.global-gitignore
 [color]
     diff = auto
     status = auto
