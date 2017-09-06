@@ -16,6 +16,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'python-mode/python-mode'
 Plugin 'jremmen/vim-ripgrep'
+Plugin 'blueyed/vim-diminactive'
 
 call vundle#end()
 filetype plugin indent on     " required!
@@ -238,3 +239,6 @@ if has("user_commands")
     command! -bang Wqa wqa<bang>
     command! -bang WQa wqa<bang>
 endif
+
+" Diminactive.vim settings
+let g:diminactive_use_syntax = 1
