@@ -1,6 +1,7 @@
 # ripgrep common args
 # -C 2: 2 lines context | -M 160: Print up to 160th line column
 alias rg='rg -C 2 -M 160'
+alias rgv='/usr/local/bin/rg'
 
 # mv, rm, cp
 alias mv='mv -v'
