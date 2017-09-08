@@ -239,6 +239,3 @@ if has("user_commands")
     command! -bang Wqa wqa<bang>
     command! -bang WQa wqa<bang>
 endif
-
-" Diminactive.vim settings
-let g:diminactive_use_syntax = 1
