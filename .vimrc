@@ -10,13 +10,13 @@ Plugin 'VundleVim/Vundle.vim'
 
 " My Bundles here:
 Plugin 'kristijanhusak/vim-hybrid-material'
-Plugin 'jacoborus/tender.vim'
+Plugin 'morhetz/gruvbox'
 Plugin 'itchyny/lightline.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'python-mode/python-mode'
 Plugin 'jremmen/vim-ripgrep'
-Plugin 'blueyed/vim-diminactive'
+Plugin 'Yggdroot/indentLine'
 
 call vundle#end()
 filetype plugin indent on     " required!
@@ -28,22 +28,10 @@ autocmd! bufwritepost .vimrc source %
 syntax on
 
 " Theme
-" set background=dark
-" colorscheme hybrid_reverse
 syntax enable
-colorscheme tender
-" fix seargh highlight
-hi Search ctermfg=235 ctermbg=15 cterm=NONE
-" Custom Highlighting
-augroup myhighlight
-    autocmd BufRead,BufNewFile * syn match Braces /[(){}]/
-    autocmd BufRead,BufNewFile * syn match javaScriptOpSymbols "=\{1,3}\|!==\|!=\|<\|>\|>=\|<=\|++\|+=\|--\|-="
-    autocmd BufRead,BufNewFile * syn match javaScriptEndColons "[;,]"
-    autocmd BufRead,BufNewFile * syn match javaScriptLogicSymbols "\(&&\)\|\(||\)"
-augroup END
-hi Braces ctermfg=153 ctermbg=NONE cterm=NONE
-hi pythonDottedName ctermfg=185 ctermbg=NONE cterm=NONE
-hi pythonFunction ctermfg=185 ctermbg=NONE cterm=NONE
+colorscheme gruvbox
+set background=dark
+set termguicolors
 
 " Normal backspace
 set bs=2
@@ -68,10 +56,20 @@ set wildmode=list:longest,full
 set ignorecase
 set smartcase
 
-" Set the terminal title
-set title
-set titleold="Terminal"
-set titlestring=%F
+" Set the title of the Terminal to the currently open file
+function! SetTerminalTitle()
+    let titleString = expand('%:t')
+    if len(titleString) > 0
+        let &titlestring = expand('%:t')
+        " this is the format iTerm2 expects when setting the window title
+        let args = "\033];".&titlestring."\007"
+        let cmd = 'silent !echo -e "'.args.'"'
+        execute cmd
+        redraw!
+    endif
+endfunction
+
+autocmd BufEnter * call SetTerminalTitle()
 
 " Maintain more context around the cursor
 set scrolloff=5
@@ -90,9 +88,6 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 " Scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
-
-" bind leader+g to grep word under cursor
-map <Leader>g :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Enable limited line numbering
 set ruler
@@ -153,7 +148,7 @@ set pastetoggle=<leader>p
 " Enable lightline
 set laststatus=2
 let g:lightline = {
-      \ 'colorscheme': 'tender'
+      \ 'colorscheme': 'gruvbox'
       \ }
 " Hide default vim mode info
 set noshowmode

@@ -16,6 +16,8 @@ unset file
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Every terminal tab has it's own history instead of sharing a common one
+unsetopt inc_append_history
+unsetopt share_history
 setopt APPEND_HISTORY
 
 # Set to this to use case-sensitive completion
