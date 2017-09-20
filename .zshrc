@@ -14,6 +14,7 @@ done
 unset file
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=25"
 
 # Every terminal tab has it's own history instead of sharing a common one
 unsetopt inc_append_history
