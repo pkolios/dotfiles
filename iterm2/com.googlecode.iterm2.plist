@@ -512,7 +512,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>-1126 41 445 391 -2560 -348 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-1379 418 796 473 -2560 -348 2560 1418 </string>
+	<string>-1379 519 796 473 -2560 -348 2560 1418 </string>
 	<key>NSWindow Frame com.apple.typography_panel_Monoid-Retina</key>
 	<string>-2081 68 260 354 -2560 -348 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -1145,7 +1145,7 @@
 			<key>Shortcut</key>
 			<string></string>
 			<key>Silence Bell</key>
-			<false/>
+			<true/>
 			<key>Smart Cursor Color</key>
 			<false/>
 			<key>Sync Title</key>
