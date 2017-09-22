@@ -16,7 +16,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'python-mode/python-mode'
 Plugin 'jremmen/vim-ripgrep'
-Plugin 'Yggdroot/indentLine'
 
 call vundle#end()
 filetype plugin indent on     " required!
@@ -73,7 +72,6 @@ autocmd BufEnter * call SetTerminalTitle()
 
 " Maintain more context around the cursor
 set scrolloff=5
-set cursorline          " highlight current line
 
 " yank and paste with the system clipboard
 set clipboard=unnamed
@@ -169,7 +167,7 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 
 " The ripgrep
 if executable('rg')
