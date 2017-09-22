@@ -20,15 +20,19 @@ setup-scripts:
 	sh scripts/setup-vim.sh
 	sh scripts/setup-docker.sh
 
-update:
+update-vim:
+	vim +PluginClean +qall
+	vim +PluginInstall +qall
+
+update-brew:
 	brew -v update
 	brew upgrade --force-bottle --cleanup
 	brew cleanup
 	brew cask cleanup
 	brew prune
 	brew doctor
-	vim +PluginClean +qall
-	vim +PluginInstall +qall
+
+update: update-brew update-vim
 
 extras:
 	sh scripts/install-extras.sh

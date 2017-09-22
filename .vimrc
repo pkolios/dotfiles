@@ -9,12 +9,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " My Bundles here:
-Plugin 'kristijanhusak/vim-hybrid-material'
-Plugin 'morhetz/gruvbox'
+Plugin 'rakr/vim-two-firewatch'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'itchyny/lightline.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'python-mode/python-mode'
 Plugin 'jremmen/vim-ripgrep'
 
 call vundle#end()
@@ -28,9 +27,9 @@ syntax on
 
 " Theme
 syntax enable
-colorscheme gruvbox
-set background=dark
 set termguicolors
+set background=dark
+colorscheme two-firewatch
 
 " Normal backspace
 set bs=2
@@ -78,6 +77,11 @@ set clipboard=unnamed
 
 " redraw only when we need to.
 set lazyredraw
+
+" speed up tty
+set ttyfast
+set ttymouse=xterm2
+set ttyscroll=3
 
 " Store temporary files in a central spot
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -146,7 +150,7 @@ set pastetoggle=<leader>p
 " Enable lightline
 set laststatus=2
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox'
+      \ 'colorscheme': 'twofirewatch'
       \ }
 " Hide default vim mode info
 set noshowmode
@@ -188,35 +192,6 @@ augroup END
 
 " Python breakpoint shortcut
 map <Leader>b oimport ipdb; ipdb.set_trace()  # BREAKPOINT<C-c>
-
-" Python syntax settings
-let python_highlight_all = 1
-
-" Python mode settings
-let g:pymode = 1
-let g:pymode_python = 'python3'
-let g:pymode_rope = 0
-let g:pymode_doc = 0
-let g:pymode_virtualenv = 0
-let g:pymode_lint = 0
-let g:pymode_options_max_line_length = 79
-let g:pymode_breakpoint = 0
-let g:pymode_indent = 1
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_syntax_print_as_function = 0
-let g:pymode_syntax_highlight_self = g:pymode_syntax_all
-let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-let g:pymode_syntax_space_errors = g:pymode_syntax_all
-let g:pymode_syntax_string_formatting = g:pymode_syntax_all
-let g:pymode_syntax_string_format = g:pymode_syntax_all
-let g:pymode_syntax_string_templates = g:pymode_syntax_all
-let g:pymode_syntax_doctests = g:pymode_syntax_all
-let g:pymode_syntax_builtin_objs = g:pymode_syntax_all
-let g:pymode_syntax_builtin_types = g:pymode_syntax_all
-let g:pymode_syntax_highlight_exceptions = g:pymode_syntax_all
-let g:pymode_syntax_docstrings = g:pymode_syntax_all
-let g:pymode_folding = 0
 
 " Remap Q W and E to q w e
 if has("user_commands")
