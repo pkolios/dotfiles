@@ -772,7 +772,9 @@
 	<key>NSWindow Frame com.apple.typography_panel_Monoid-Retina</key>
 	<string>-2081 68 260 354 -2560 -348 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>191 230 1150 648 0 0 1440 878 </string>
+	<string>13 496 490 375 0 0 1440 878 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>-2526 -316 2482 1363 -2560 -348 2560 1418 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1443,6 +1445,8 @@
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>1</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>527595646.76639998</real>
 	<key>PointerActions</key>
@@ -1511,7 +1515,7 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.1.1</string>
+	<string>3.1.20170922-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
