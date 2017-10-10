@@ -9,7 +9,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " My Bundles here:
-Plugin 'rakr/vim-two-firewatch'
+Plugin 'jacoborus/tender.vim'
+Plugin 'rakr/vim-two-firewatch'  " use only for lightline
 Plugin 'sheerun/vim-polyglot'
 Plugin 'itchyny/lightline.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -26,10 +27,12 @@ autocmd! bufwritepost .vimrc source %
 syntax on
 
 " Theme
+if (has("termguicolors"))
+  set termguicolors
+endif
 syntax enable
-set termguicolors
 set background=dark
-colorscheme two-firewatch
+colorscheme tender
 
 " Normal backspace
 set bs=2
