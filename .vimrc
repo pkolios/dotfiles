@@ -14,7 +14,7 @@ Plugin 'rakr/vim-two-firewatch'  " use only for lightline
 Plugin 'sheerun/vim-polyglot'
 Plugin 'itchyny/lightline.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'jremmen/vim-ripgrep'
 
 call vundle#end()
@@ -165,16 +165,9 @@ set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+" Ale
+let g:ale_open_list = 1
+let g:ale_lint_on_text_changed = 'never'
 
 " The ripgrep
 if executable('rg')
