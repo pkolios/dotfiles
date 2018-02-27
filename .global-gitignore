@@ -1,6 +1,7 @@
 # Python files
 *.pyc
 .cache/
+.pytest_cache/
 
 # Folder view configuration files
 .DS_Store
