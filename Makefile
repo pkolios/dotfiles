@@ -32,7 +32,10 @@ update-brew:
 	brew prune
 	brew doctor
 
-update: update-brew update-vim
+update-brew-cask:
+	brew cask upgrade
+
+update: update-brew update-vim update-brew-cask
 
 extras:
 	sh scripts/install-extras.sh
