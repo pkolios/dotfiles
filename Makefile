@@ -28,7 +28,6 @@ update-brew:
 	brew -v update
 	brew upgrade --force-bottle --cleanup
 	brew cleanup
-	brew cask cleanup
 	brew prune
 	brew doctor
 
