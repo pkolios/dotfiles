@@ -189,7 +189,7 @@ augroup myvimrc
 augroup END
 
 " Python breakpoint shortcut
-map <Leader>b oimport pdb; pdb.set_trace()  # BREAKPOINT<C-c>
+map <Leader>b obreakpoint()  # BREAKPOINT<C-c>
 
 " Remap Q W and E to q w e
 if has("user_commands")
