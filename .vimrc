@@ -176,6 +176,7 @@ let g:ale_python_flake8_options = '--max-line-length=88 --ignore=E501,W503'
 let g:ale_fixers = {
 \   'python': [
 \       'black',
+\       'isort',
 \   ],
 \}
 

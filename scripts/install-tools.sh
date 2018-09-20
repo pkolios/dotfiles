@@ -14,6 +14,7 @@ pip3 install --upgrade pip setuptool
 pip3 install flake8
 pip3 install flake8-bugbear
 pip3 install black
+pip3 install isort
 
 # Docker
 brew install docker
