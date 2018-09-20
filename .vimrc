@@ -172,7 +172,7 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_c_gcc_options='-std=c11 -Wall -I../include -I./include -L./lib/'
 let g:ale_c_clang_options='-std=c11 -Wall -I../include -I./include -L./lib/'
 
-let g:ale_python_flake8_options = '--max-line-length=88 --ignore E501'
+let g:ale_python_flake8_options = '--max-line-length=88 --ignore=E501,W503'
 let g:ale_fixers = {
 \   'python': [
 \       'black',
