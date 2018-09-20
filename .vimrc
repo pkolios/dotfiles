@@ -167,9 +167,17 @@ set wildignore+=*/coverage/*
 
 " Ale
 let g:ale_open_list = 1
+let g:ale_fix_on_save = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_c_gcc_options='-std=c11 -Wall -I../include -I./include -L./lib/'
 let g:ale_c_clang_options='-std=c11 -Wall -I../include -I./include -L./lib/'
+
+let g:ale_python_flake8_options = '--max-line-length=88 --ignore E501'
+let g:ale_fixers = {
+\   'python': [
+\       'black',
+\   ],
+\}
 
 " The ripgrep
 if executable('rg')
@@ -182,10 +190,9 @@ if executable('rg')
 endif
 
 " automatically open the location/quickfix window
-augroup myvimrc
-    autocmd!
-    autocmd QuickFixCmdPost [^l]* cwindow
-    autocmd QuickFixCmdPost l*    lwindow
+augroup CloseLoclistWindowGroup
+  autocmd!
+  autocmd QuitPre * if empty(&buftype) | lclose | endif
 augroup END
 
 " Python breakpoint shortcut

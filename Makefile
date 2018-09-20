@@ -21,8 +21,7 @@ setup-scripts:
 	sh scripts/setup-docker.sh
 
 update-vim:
-	vim +PluginClean +qall
-	vim +PluginInstall +qall
+	vim -c VundleUpdate -c quitall
 
 update-brew:
 	brew -v update
@@ -34,7 +33,11 @@ update-brew:
 update-brew-cask:
 	brew cask upgrade
 
-update: update-brew update-vim update-brew-cask
+update-tools:
+	pip install --upgrade pip
+	pip install -U `pip freeze | cut -d '=' -f 1`
+
+update: update-brew update-tools update-vim update-brew-cask
 
 extras:
 	sh scripts/install-extras.sh

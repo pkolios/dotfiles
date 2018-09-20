@@ -12,6 +12,8 @@ brew install python3
 pip2 install --upgrade pip setuptool
 pip3 install --upgrade pip setuptool
 pip3 install flake8
+pip3 install flake8-bugbear
+pip3 install black
 
 # Docker
 brew install docker
