@@ -13,6 +13,7 @@ Plugin 'jacoborus/tender.vim'
 Plugin 'rakr/vim-two-firewatch'  " use only for lightline
 Plugin 'sheerun/vim-polyglot'
 Plugin 'itchyny/lightline.vim'
+Plugin 'romainl/vim-cool'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'w0rp/ale'
 Plugin 'jremmen/vim-ripgrep'
