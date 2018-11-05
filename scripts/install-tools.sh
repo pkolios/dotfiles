@@ -19,8 +19,12 @@ pip3 install isort
 # Docker
 brew install docker
 brew install docker-machine
-brew install docker-compose
+pip install docker-compose
 brew install docker-machine-nfs
+
+# AWS
+pip install awscli
+pip install awsebcli
 
 # The rest
 brew install ripgrep
