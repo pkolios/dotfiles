@@ -17,6 +17,7 @@ Plugin 'romainl/vim-cool'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'w0rp/ale'
 Plugin 'jremmen/vim-ripgrep'
+Plugin 'TaDaa/vimade'
 
 call vundle#end()
 filetype plugin indent on     " required!
@@ -174,6 +175,17 @@ if executable('rg')
   " rg is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+
+" Vimade
+let g:vimade = {
+\   "normalid": '',
+\   "basefg": '',
+\   "basebg": '',
+\   "fadelevel": 0.4,
+\   "colbufsize": 30,
+\   "rowbufsize": 30,
+\   "checkinterval": 32,
+\}
 
 " automatically open the location/quickfix window
 augroup CloseLoclistWindowGroup
