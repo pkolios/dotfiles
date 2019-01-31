@@ -25,7 +25,7 @@ update-vim:
 
 update-brew:
 	brew -v update
-	brew upgrade --force-bottle --cleanup
+	brew upgrade --force-bottle
 	brew cleanup
 	brew doctor
 
