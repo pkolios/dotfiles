@@ -17,6 +17,7 @@ Plugin 'romainl/vim-cool'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'w0rp/ale'
 Plugin 'jremmen/vim-ripgrep'
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'TaDaa/vimade'
 
 call vundle#end()

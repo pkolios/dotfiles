@@ -14,7 +14,7 @@
 [alias]
     co = checkout
     st = status
-    gl = log --graph --all --decorate --date=relative
+    gl = log --graph --all --decorate --date=relative --abbrev-commit
     fixup = commit --fixup
     branch-name = !git rev-parse --abbrev-ref HEAD
     update = !git pull upstream $(git branch-name) && git push origin $(git branch-name)
