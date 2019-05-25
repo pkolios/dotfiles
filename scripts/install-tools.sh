@@ -17,8 +17,7 @@ pip3 install black
 pip3 install isort
 
 # Docker
-brew install docker
-brew install docker-machine
+#brew install docker
 pip install docker-compose
 brew install docker-machine-nfs
 

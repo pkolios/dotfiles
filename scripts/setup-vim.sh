@@ -8,5 +8,4 @@ ln -sv ~/.dotfiles/.vim ~/.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Install plugins
-vim +PluginInstall +qall
-
+vim -c VundleUpdate -c quitall
