@@ -1,1 +1,1 @@
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH
+PATH="/usr/local/opt/terraform@0.11/bin:$PATH"
