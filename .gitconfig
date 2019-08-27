@@ -20,3 +20,4 @@
     update = !git pull upstream $(git branch-name) && git push origin $(git branch-name)
     unstage = reset HEAD~
     rlog = !git log $(git describe --tags --abbrev=0)..HEAD --oneline
+    deploy = !git tag -a $1 -f -m "$1" && git push origin $1 -f && :
