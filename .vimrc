@@ -68,6 +68,7 @@ set clipboard=unnamed
 
 " redraw only when we need to.
 set lazyredraw
+set redrawtime=10000
 
 " speed up tty
 set ttyfast
