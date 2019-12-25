@@ -5,14 +5,37 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 ZSH_THEME="enc"
 
-# Load the shell dotfiles, and then some:
-# * ~/.mix-path can be used to extend `$PATH`.
-# * ~/.mix-extra can be used for other settings you don’t want to commit to your repo.
-for file in ~/.zsh/{path,exports,aliases,functions}; do
-	[ -r "$file" ] && source "$file"
-done
-unset file
+# Path
+PATH="/usr/local/opt/terraform@0.11/bin:$PATH"
 
+# Aliases
+# ripgrep common args
+# -C 2: 2 lines context | -M 160: Print up to 160th line column
+alias rg='rg -C 2 -M 160'
+alias rgv='/usr/local/bin/rg'
+
+# mv, rm, cp
+alias mv='mv -v'
+alias rm='rm -i -v'
+alias cp='cp -v'
+
+# Legacy python compiled file clear
+alias pycleaner="pyclean .;"
+
+# Empty the Trash on all mounted volumes and the main HDD
+# Also, clear Apple’s System Logs to improve shell startup speed
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
+# Tool shortcuts
+alias tf='terraform'
+alias dc='docker-compose'
+
+# Exports
+export EDITOR="vim"
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# Autosuggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=25"
 
@@ -21,35 +44,12 @@ unsetopt inc_append_history
 unsetopt share_history
 setopt APPEND_HISTORY
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
-
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
-
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew pip python docker docker-compose vi-mode kubectl)
+plugins=(docker docker-compose vi-mode)
 
 source $ZSH/oh-my-zsh.sh
