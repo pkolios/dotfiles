@@ -6,7 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="enc"
 
 # Path
-PATH="/usr/local/opt/terraform@0.11/bin:$PATH"
+PATH="/usr/local/opt/terraform@0.11/bin:/Users/enc/Library/Python/3.7/bin:$PATH"
 
 # Aliases
 # ripgrep common args
