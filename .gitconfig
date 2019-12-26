@@ -2,7 +2,7 @@
     name = Paris Kolios
     email = paris.k@gmail.com
 [core]
-    editor = vim
+    editor = nvim
     excludesfile = ~/.global-gitignore
 [color]
     diff = auto

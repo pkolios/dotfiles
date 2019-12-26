@@ -2,10 +2,11 @@ set nobackup
 set noswapfile
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'haishanh/night-owl.vim'
-Plug 'kaicataldo/material.vim'
+Plug 'jacoborus/tender.vim'
+Plug 'rakr/vim-two-firewatch'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/indentLine'
 Plug 'mhinz/vim-startify'
 Plug 'Raimondi/delimitMate'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -27,16 +28,15 @@ Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh
 Plug 'stsewd/isort.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'raimon49/requirements.txt.vim'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'othree/yajs.vim'
 Plug 'ncm2/nvim-typescript', {'do': './install.sh'}
 call plug#end()
 
 " theme
-syntax enable
-colorscheme night-owl
-filetype plugin indent on     " required!
-
-" true color
 set termguicolors
+syntax enable
+colorscheme tender
+filetype plugin indent on     " required!
 
 " Show leader command
 set showcmd
@@ -68,6 +68,7 @@ augroup CloseLoclistWindowGroup
 augroup END
 
 " Airline
+let g:airline_theme = 'tender'
 let g:airline_powerline_fonts = 1
 let g:airline_extensions_add = ['neomake']
 
@@ -101,6 +102,14 @@ let g:neomake_python_enabled_makers = ['python', 'flake8']
 let g:neomake_python_python_exe = 'python3'
 
 " Startify
+let g:startify_custom_header = [
+            \ '         ___',
+            \ '        / (_)',
+            \ '        \__   _  _    __',
+            \ '        /    / |/ |  /',
+            \ '        \___/  |  |_/\___/',
+            \ '',
+            \ ]
 let g:startify_change_to_dir = 0
 let g:startify_change_to_vcs_root = 1
 

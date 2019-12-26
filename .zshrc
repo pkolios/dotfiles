@@ -31,7 +31,7 @@ alias tf='terraform'
 alias dc='docker-compose'
 
 # Exports
-export EDITOR="vim"
+export EDITOR="nvim"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 

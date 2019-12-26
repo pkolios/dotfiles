@@ -1,4 +1,5 @@
 #!/bin/bash
 
-brew tap leipert/homebrew-monoid
-brew cask install font-monoid-nocalt
+brew tap homebrew/cask-fonts
+brew cask install font-monoid
+brew cask install font-victor-mono
