@@ -2,11 +2,8 @@ set nobackup
 set noswapfile
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'jacoborus/tender.vim'
-Plug 'rakr/vim-two-firewatch'
+Plug 'sainnhe/edge'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'Yggdroot/indentLine'
 Plug 'mhinz/vim-startify'
 Plug 'Raimondi/delimitMate'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -30,12 +27,16 @@ Plug 'raimon49/requirements.txt.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'othree/yajs.vim'
 Plug 'ncm2/nvim-typescript', {'do': './install.sh'}
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'rhysd/committia.vim'
 call plug#end()
 
 " theme
 set termguicolors
 syntax enable
-colorscheme tender
+set background=dark
+let g:edge_style = 'neon'
+colorscheme edge
 filetype plugin indent on     " required!
 
 " italics
@@ -85,9 +86,13 @@ augroup CloseLoclistWindowGroup
 augroup END
 
 " Airline
-let g:airline_theme = 'tender'
+let g:airline_theme = 'edge'
 let g:airline_powerline_fonts = 1
 let g:airline_extensions_add = ['neomake']
+
+
+" Hexokinase
+let g:Hexokinase_virtualText = '☁'
 
 " ncm2 enable for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()

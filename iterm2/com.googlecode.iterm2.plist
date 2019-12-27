@@ -2127,6 +2127,7 @@
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
+		<string>VictorMono Nerd Font</string>
 		<string>Victor Mono</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
@@ -2934,7 +2935,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-12-25T20:45:22Z</date>
+	<date>2019-12-27T14:34:02Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
