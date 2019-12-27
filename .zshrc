@@ -9,6 +9,10 @@ ZSH_THEME="enc"
 PATH="/usr/local/opt/terraform@0.11/bin:/Users/enc/Library/Python/3.7/bin:$PATH"
 
 # Aliases
+# neovim
+alias vim="nvim"
+alias vi="nvim"
+
 # ripgrep common args
 # -C 2: 2 lines context | -M 160: Print up to 160th line column
 alias rg='rg -C 2 -M 160'

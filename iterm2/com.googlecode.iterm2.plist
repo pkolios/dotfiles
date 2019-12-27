@@ -1344,7 +1344,7 @@
 	<key>NSWindow Frame com.apple.typography_panel_Monoid-Retina</key>
 	<string>-2081 68 260 354 -2560 -348 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>17 69 1246 792 0 0 1440 877 </string>
+	<string>15 9 1410 858 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>17 13 1414 848 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2082,7 +2082,7 @@
 			<key>Tags</key>
 			<array/>
 			<key>Terminal Type</key>
-			<string>xterm-256color</string>
+			<string>xterm-256color-italic</string>
 			<key>Thin Strokes</key>
 			<integer>4</integer>
 			<key>Title Components</key>
@@ -2106,7 +2106,7 @@
 			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.0900000000000001</real>
+			<real>1</real>
 			<key>Visual Bell</key>
 			<false/>
 			<key>Window Type</key>
@@ -2143,7 +2143,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>5CA707D1-6997-40C1-BA1E-6C8370AF5E1D</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>21</integer>
+	<integer>22</integer>
 	<key>NoSyncNeverPromptToChangeOption</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>

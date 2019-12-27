@@ -10,3 +10,5 @@ python3 -m pip install --user --upgrade 'python-language-server[all]'
 
 npm install -g neovim
 nvim -c PlugUpdate
+
+tic ../iterm2/xterm-256color-italic.terminfo

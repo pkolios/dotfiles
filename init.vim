@@ -38,6 +38,11 @@ syntax enable
 colorscheme tender
 filetype plugin indent on     " required!
 
+" italics
+highlight Comment cterm=italic
+highlight Comment gui=italic
+
+
 " Show leader command
 set showcmd
 
