@@ -42,12 +42,24 @@ filetype plugin indent on     " required!
 highlight Comment cterm=italic
 highlight Comment gui=italic
 
-
 " Show leader command
 set showcmd
 
 " Map leader key to ,
 let mapleader = ","
+
+" Normal backspace
+set bs=2
+
+" Intuitive backspacing in insert mode
+set backspace=indent,eol,start
+
+" Use case-smart searching
+set ignorecase
+set smartcase
+
+" Make file/command completion useful
+set wildmode=list:longest,full
 
 " highlight tabs and trailing spaces
 set list
