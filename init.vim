@@ -66,6 +66,17 @@ set wildmode=list:longest,full
 set list
 set listchars=tab:▸\ ,trail:▫
 
+" don't use TABs but spaces
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+
+" utf-8 default encoding
+set enc=utf-8
+set encoding=utf-8
+
 " Maintain more context around the cursor
 set scrolloff=5
 
