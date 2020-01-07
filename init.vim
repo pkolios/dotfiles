@@ -149,6 +149,7 @@ let g:startify_change_to_vcs_root = 1
 " Settings for ctrlp
 let g:ctrlp_max_height = 30
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
