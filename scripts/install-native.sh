@@ -7,3 +7,4 @@ brew cask install google-chrome
 brew cask install slack
 brew cask install the-unarchiver
 brew cask install little-snitch
+brew cask install spotify

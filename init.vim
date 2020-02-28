@@ -127,6 +127,7 @@ augroup fmt
 augroup END
 let g:neoformat_run_all_formatters = 1
 let g:neoformat_enabled_python = ['black', 'isort']
+let g:neoformat_enabled_javascript = ['prettiereslint']
 
 " Neomake
 call neomake#configure#automake('w')

@@ -40,7 +40,7 @@ update-tools:
 	pip install --upgrade pip
 	pip install -U `pip freeze | cut -d '=' -f 1`
 
-update: update-brew update-tools update-vim update-brew-cask
+update: update-brew update-tools update-nvim update-brew-cask
 
 extras:
 	sh scripts/install-extras.sh
