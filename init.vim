@@ -2,7 +2,7 @@ set nobackup
 set noswapfile
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'sainnhe/edge'
+Plug 'sainnhe/sonokai'
 Plug 'vim-airline/vim-airline'
 Plug 'mhinz/vim-startify'
 Plug 'Raimondi/delimitMate'
@@ -34,9 +34,12 @@ call plug#end()
 " theme
 set termguicolors
 syntax enable
-set background=dark
-let g:edge_style = 'neon'
-colorscheme edge
+" the configuration options should be placed before `colorscheme sonokai`
+let g:sonokai_style = 'atlantis'
+let g:sonokai_enable_italic = 1
+
+colorscheme sonokai
+
 filetype plugin indent on     " required!
 
 " italics
@@ -97,7 +100,7 @@ augroup CloseLoclistWindowGroup
 augroup END
 
 " Airline
-let g:airline_theme = 'edge'
+let g:airline_theme = 'sonokai'
 let g:airline_powerline_fonts = 1
 let g:airline_extensions_add = ['neomake']
 
@@ -160,7 +163,6 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
     \ 'typescript': ['yarn', 'run', 'typescript-language-server', '--stdio'],
     \ 'typescript.tsx': ['yarn', 'run', 'typescript-language-server', '--stdio'],
-    \ 'python': ['pyls'],
     \ }
 
 " Intuitive backspacing in insert mode
