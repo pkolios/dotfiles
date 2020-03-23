@@ -27,7 +27,6 @@ Plug 'raimon49/requirements.txt.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'othree/yajs.vim'
 Plug 'ncm2/nvim-typescript', {'do': './install.sh'}
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'rhysd/committia.vim'
 call plug#end()
 
@@ -103,10 +102,6 @@ augroup END
 let g:airline_theme = 'sonokai'
 let g:airline_powerline_fonts = 1
 let g:airline_extensions_add = ['neomake']
-
-
-" Hexokinase
-let g:Hexokinase_virtualText = '☁'
 
 " ncm2 enable for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
