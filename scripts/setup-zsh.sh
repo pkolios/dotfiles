@@ -12,4 +12,4 @@ ln -sv ~/.dotfiles/.zshrc ~/.zshrc
 ln -sv ~/.dotfiles/.zsh ~/.zsh
 
 # Install autosuggestions
-git clone --depth 1 git://github.com/zsh-users/zsh-autosuggestions ~/.dotfiles/.zsh/zsh-autosuggestions
+brew install zsh-autosuggestions

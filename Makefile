@@ -20,9 +20,6 @@ setup-scripts:
 	sh scripts/setup-vim.sh
 	sh scripts/setup-docker.sh
 
-update-vim:
-	\vim -c VundleUpdate -c quitall
-
 update-nvim:
 	\nvim -c PlugUpgrade
 	\nvim -c PlugUpdate
