@@ -6,9 +6,3 @@ brew update
 
 # Upgrade any already-installed formulae
 brew upgrade
-
-# Install brew cask
-brew tap caskroom/cask
-
-# Alternate versions of casks
-brew tap caskroom/versions

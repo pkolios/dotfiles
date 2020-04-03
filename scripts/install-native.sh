@@ -1,10 +1,16 @@
 #!/bin/bash
 
-brew cask install iterm2-nightly
-brew cask install firefoxnightly
-brew cask install firefox
+brew cask install flux
 brew cask install google-chrome
-brew cask install slack
-brew cask install the-unarchiver
+brew cask install iterm2-nightly
+brew cask install firefox
+brew cask install firefoxnightly
 brew cask install little-snitch
+brew cask install signal
+brew cask install slack
 brew cask install spotify
+brew cask install steam
+brew cask install telegram-desktop
+brew cask install the-unarchiver
+brew cask install vlc
+brew cask install whatsapp
