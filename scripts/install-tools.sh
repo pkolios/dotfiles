@@ -11,8 +11,6 @@ brew install wget
 
 # Python
 brew instal python
-brew install python3
-pip2 install --upgrade pip setuptool
 pip3 install --upgrade pip setuptool
 pip3 install flake8
 pip3 install flake8-bugbear
