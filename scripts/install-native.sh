@@ -2,9 +2,8 @@
 
 brew cask install flux
 brew cask install google-chrome
-brew cask install iterm2-nightly
+brew cask install iterm2
 brew cask install firefox
-brew cask install firefoxnightly
 brew cask install little-snitch
 brew cask install signal
 brew cask install slack
