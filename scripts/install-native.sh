@@ -3,6 +3,8 @@
 brew cask install flux
 brew cask install google-chrome
 brew cask install iterm2
+tic ../iterm2/xterm-256color-italic.terminfo
+
 brew cask install firefox
 brew cask install little-snitch
 brew cask install signal
