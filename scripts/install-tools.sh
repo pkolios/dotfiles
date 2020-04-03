@@ -17,6 +17,9 @@ pip3 install flake8-bugbear
 pip3 install black
 pip3 install isort
 
+# JS
+brew install node
+
 # AWS
 pip install awscli
 pip install awsebcli
