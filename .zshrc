@@ -57,3 +57,4 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(docker docker-compose vi-mode)
 
 source $ZSH/oh-my-zsh.sh
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
