@@ -1,5 +1,4 @@
 {
-  "breadcrumbs.enabled": false,
   "editor.fontFamily": "'Victor Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": false,
   "editor.cursorStyle": "block",
@@ -25,6 +24,9 @@
   "errorLens.fontStyleItalic": true,
   "git.defaultCloneDirectory": "",
   "git.enabled": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "python.pythonPath": "/usr/local/opt/python@3.8/bin/python3",
   "python.linting.pylintEnabled": true,
   "python.linting.enabled": true,
@@ -44,21 +46,17 @@
   "task.autoDetect": "off",
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "vim.cursorStylePerMode.insert": "line",
   "vim.cursorStylePerMode.normal": "block",
   "vim.cursorStylePerMode.visual": "line",
   "vim.useSystemClipboard": true,
   "vim.leader": ",",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "workbench.startupEditor": "newUntitledFile",
   "window.closeWhenEmpty": true,
   "window.openFilesInNewWindow": "default",
   "workbench.activityBar.visible": false,
   "workbench.colorTheme": "Sonokai Andromeda",
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
 }

@@ -9,6 +9,8 @@
     status = auto
     branch = auto
     ui = true
+[pager]
+    branch = false
 [github]
     user = pkolios
 [alias]

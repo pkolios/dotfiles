@@ -1326,7 +1326,7 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>440 434 799 448 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>15 17 1649 994 0 0 1680 1027 </string>
+	<string>15 17 1648 994 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2109,7 +2109,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>A835FDE9-47D6-4B23-848C-98636EE0A827</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>10</integer>
+	<integer>13</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>608383083.679214</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2828,6 +2828,8 @@
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
 	<false/>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -2863,6 +2865,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/enc/.dotfiles/iterm2</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
@@ -2874,7 +2878,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-04-30T10:06:28Z</date>
+	<date>2020-05-26T21:59:31Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SeparateStatusBarsPerPane</key>
