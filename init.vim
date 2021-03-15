@@ -16,7 +16,6 @@ Plug 'fgrsnau/ncm2-otherbuf'
 Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-cssomni'
 Plug 'ncm2/ncm2-jedi'
-Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
 Plug 'ncm2/ncm2-match-highlight'
 Plug 'roxma/nvim-yarp'
 Plug 'sbdchd/neoformat'
@@ -26,7 +25,6 @@ Plug 'stsewd/isort.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'raimon49/requirements.txt.vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'othree/yajs.vim'
-Plug 'ncm2/nvim-typescript', {'do': './install.sh'}
 Plug 'rhysd/committia.vim'
 call plug#end()
 
