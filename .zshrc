@@ -5,9 +5,6 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 ZSH_THEME="enc"
 
-# Path
-PATH="/usr/local/opt/terraform@0.11/bin:/Users/enc/Library/Python/3.7/bin:$PATH"
-
 # Aliases
 # neovim
 alias vim="nvim"
@@ -57,4 +54,4 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(docker docker-compose vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+export PATH="/usr/local/bin/python@3.9/bin:$PATH"

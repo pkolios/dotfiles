@@ -9,7 +9,6 @@ find ~ -maxdepth 1 -name '.zshrc' -delete
 
 # Link zsh config etc
 ln -sv ~/.dotfiles/.zshrc ~/.zshrc
-ln -sv ~/.dotfiles/.zsh ~/.zsh
 
 # Install autosuggestions
 brew install zsh-autosuggestions
