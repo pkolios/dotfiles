@@ -1,0 +1,25 @@
+#!/bin/zsh
+
+# neovim
+alias vim="nvim"
+alias vi="nvim"
+alias :q="exit"
+
+# ripgrep common args
+# -C 2: 2 lines context | -M 160: Print up to 160th line column
+alias rg='rg -C 2 -M 160'
+alias rgv='/usr/local/bin/rg'
+
+# ls, mv, rm, cp
+alias ls="ls --color=always"
+alias l="ls -lAh --color=always"
+alias la="ls -lah --color=always"
+alias ll="ls -lh --color=always"
+alias mv='mv -v'
+alias rm='rm -i -v'
+alias cp='cp -v'
+
+pyclean () {
+        find . -type f -name "*.py[co]" -delete
+        find . -type d -name "__pycache__" -delete
+}
