@@ -40,8 +40,17 @@ brew install --cask font-monoid-font font-victor-mono font-iosevka-nerd-font
 
 ## Configure git
 
-1. Generate ssh key & add to github profile
-2. Copy `.gitconfig` and `.global-gitignore` to `$HOME`.
+Generate ssh key & add to github profile
+
+Clone this repo in `$HOME` dir.
+
+Link `.gitconfig` and `.global-gitignore`.
+
+```
+ln -sv ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -sv ~/.dotfiles/.global-gitignore ~/.global-gitignore
+```
+
 3. TODO: gpg
 
 ## Configure alacritty
@@ -54,19 +63,38 @@ sudo tic -xe alacritty,alacritty-direct alacritty.info
 rm alacritty.info
 ```
 
-Copy `.alacritty.yml` to `$HOME`.
+Link `.alacritty.yml`.
+
+```
+ln -sv ~/.dotfiles/.alacritty.yml ~/.alacritty.yml
+```
 
 ## Configure zsh
 
-Install oh-my-zsh for plugins and easier themes
+Install oh-my-zsh for plugins and themes
+
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 brew install zsh-autosuggestions
 ```
 
+Link zsh configuration & theme.
+
+```
+ln -sv ~/.dotfiles/.zshrc ~/.zshrc
+ln -sv ~/.dotfiles/.zshrc-alias ~/.zshrc-alias
+ln -sv ~/.dotfiles/.zshrc-opts ~/.zshrc-opts
+ln -sv ~/.dotfiles/enc.zsh-theme ~/.oh-my-zsh/themes/enc.zsh-theme
+```
+
 ## Configure tmux
 
-Copy `.tmux.conf` to `$HOME`.
+Link `.tmux.conf`.
+
+```
+ln -sv ~/.dotfiles/.tmux.conf ~/.tmux.conf
+```
+
 
 ## Configure nvim
 
