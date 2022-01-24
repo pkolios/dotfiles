@@ -98,7 +98,19 @@ ln -sv ~/.dotfiles/.tmux.conf ~/.tmux.conf
 
 ## Configure nvim
 
-TODO
+Install plugin manager, link `init.vim` and fetch plugins
+
+```
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+mkdir -p ~/.config/nvim
+ln -sv ~/.dotfiles/init.vim ~/.config/nvim/init.vim
+ln -sv ~/.dotfiles/nvim/colors  ~/.config/nvim/colors
+ln -sv ~/.dotfiles/nvim/lua  ~/.config/nvim/lua
+ln -sv ~/.dotfiles/nvim/plugin ~/.config/nvim/plugin
+
+nvim -c PlugUpdate
+```
 
 ## Install & configure project specific tooling
 
