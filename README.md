@@ -115,6 +115,20 @@ nvim -c PlugUpdate
 ## Install & configure project specific tooling
 
 TODO: python, terraform, podman, k8s
+```
+brew install python poetry terraform direnv podman libpq
+```
+
+Enable tab completion for poetry
+```
+mkdir $ZSH_CUSTOM/plugins/poetry
+poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
+```
+
+Init podman machine
+```
+podman machine init
+```
 
 ## (Optional) Install xcode, window manager & hotkey daemon
 

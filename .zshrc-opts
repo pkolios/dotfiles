@@ -23,7 +23,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
-plugins=(tmux vi-mode)
+plugins=(tmux vi-mode poetry)
 
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=false
@@ -38,3 +38,5 @@ COMPLETION_WAITING_DOTS="true"
 ZSH_THEME="enc"
 
 source $ZSH/oh-my-zsh.sh
+eval "$(direnv hook zsh)"
+export PATH="/usr/local/bin/python3:/usr/local/opt/libpq/bin:$PATH"
