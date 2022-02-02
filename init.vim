@@ -12,9 +12,10 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'lukas-reineke/indent-blankline.nvim'
 
+Plug 'sainnhe/edge'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/nvim-bufferline.lua'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 
 Plug 'raimon49/requirements.txt.vim'
 Plug 'stsewd/isort.nvim', {'do': ':UpdateRemotePlugins'}
@@ -22,15 +23,16 @@ Plug 'stsewd/isort.nvim', {'do': ':UpdateRemotePlugins'}
 call plug#end()
 
 " theme
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set termguicolors
-syntax enable
-
-colorscheme notheme
-" fix ugly background
-highlight Normal guibg=NONE ctermbg=NONE
-highlight NonText guibg=NONE ctermbg=NONE
-highlight EndOfBuffer guibg=NONE ctermbg=NONE
+" Important!!
+if has('termguicolors')
+  set termguicolors
+endif
+" The configuration options should be placed before `colorscheme edge`.
+let g:edge_style = 'neon'
+let g:edge_enable_italic = 0
+let g:edge_disable_italic_comment = 0
+let g:edge_better_performance = 1
+colorscheme edge
 
 filetype plugin indent on     " required!
 
@@ -52,10 +54,6 @@ set smartcase
 
 " Make file/command completion useful
 set wildmode=list:longest,full
-
-" highlight tabs and trailing spaces
-set list
-set listchars=tab:▸\ ,trail:▫
 
 " utf-8 default encoding
 set enc=utf-8
@@ -130,6 +128,26 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+  indent = {
+    enable = true
+  },
 }
-require("bufferline").setup{}
+
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+vim.opt.listchars:append("eol:↴")
+
+require("indent_blankline").setup {
+    space_char_blankline = " ",
+    show_current_context = true,
+    show_current_context_start = true,
+}
+
+require('lualine').setup {
+  options = {
+    theme = 'edge',
+    section_separators = '',
+    component_separators = ''
+  }
+}
 EOF

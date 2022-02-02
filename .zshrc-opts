@@ -32,7 +32,7 @@ VI_MODE_SET_CURSOR=true
 
 # Autosuggestions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=4"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
 COMPLETION_WAITING_DOTS="true"
 
 ZSH_THEME="enc"
