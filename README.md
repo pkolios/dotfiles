@@ -107,11 +107,14 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 mkdir -p ~/.config/nvim
 ln -sv ~/.dotfiles/init.vim ~/.config/nvim/init.vim
-ln -sv ~/.dotfiles/nvim/colors  ~/.config/nvim/colors
-ln -sv ~/.dotfiles/nvim/lua  ~/.config/nvim/lua
-ln -sv ~/.dotfiles/nvim/plugin ~/.config/nvim/plugin
+
+# Install node, depedency of coc extensions
+brew install node
 
 nvim -c PlugUpdate
+
+# Run vim and install coc extensions
+:CocInstall coc-pyright coc-docker coc-sh coc-highlight coc-markdownlint coc-prettier coc-sql coc-yaml
 ```
 
 ## Install & configure project specific tooling
