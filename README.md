@@ -138,3 +138,11 @@ Use app store to install xcode as it is required for yabai
 brew tap koekeishiya/formulae
 brew install yabai skhd
 ```
+
+## (Optional) Other programs
+
+Linear mouse to remove mouse acceleration
+
+```
+brew install linearmouse
+```
