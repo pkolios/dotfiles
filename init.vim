@@ -16,7 +16,6 @@ Plug 'folke/lsp-colors.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
-Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'folke/trouble.nvim'
 
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -153,24 +152,6 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require'lspconfig'.pylsp.setup {}
-
-require("null-ls").setup({
-    sources = {
-        require("null-ls").builtins.formatting.stylua,
-        require("null-ls").builtins.diagnostics.eslint,
-        require("null-ls").builtins.completion.spell,
-    },
-    on_attach = function(client)
-        if client.resolved_capabilities.document_formatting then
-            vim.cmd([[
-            augroup LspFormatting
-                autocmd! * <buffer>
-                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-            augroup END
-            ]])
-        end
-    end,
-})
 
 require("trouble").setup {}
 
