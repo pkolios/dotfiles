@@ -86,6 +86,7 @@ augroup CloseLoclistWindowGroup
 augroup END
 
 " Startify
+let g:startify_custom_header = startify#center(['(╯°□°)╯︵ ┻━┻'])
 let g:startify_change_to_dir = 0
 let g:startify_change_to_vcs_root = 1
 
