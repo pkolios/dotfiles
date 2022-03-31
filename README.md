@@ -112,6 +112,12 @@ nvim -c PlugUpdate
 
 ```
 
+## Configure macOS
+
+```sh
+defaults write http://com.apple.Finder AppleShowAllFiles true  # Show hidden files in finder
+```
+
 ## Install & configure project specific tooling
 
 TODO: python, terraform, podman, k8s
