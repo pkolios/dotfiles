@@ -98,6 +98,12 @@ To configure tmux-256color term that supports italics follow !()[https://gist.gi
 
 ## Configure nvim
 
+Install nvim optional dependencies
+
+```sh
+brew install python node
+```
+
 Install plugin manager, link `init.vim` and fetch plugins
 
 ```sh
@@ -106,8 +112,9 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 mkdir -p ~/.config/nvim
 ln -sv ~/.dotfiles/init.vim ~/.config/nvim/init.vim
 
-# Install python-lsp-server
-pip3 install jedi 'python-lsp-server[all]' pyls-flake8 pylsp-mypy pyls-isort python-lsp-black pyls-memestra pylsp-rope
+pip3 install neovim jedi 'python-lsp-server[all]' pyls-flake8 pylsp-mypy pyls-isort python-lsp-black pyls-memestra pylsp-rope
+npm install -g neovim
+gem install neovim
 nvim -c PlugUpdate
 
 ```
@@ -120,10 +127,8 @@ defaults write http://com.apple.Finder AppleShowAllFiles true  # Show hidden fil
 
 ## Install & configure project specific tooling
 
-TODO: python, terraform, podman, k8s
-
 ```sh
-brew install python poetry black terraform direnv podman libpq pre-commit
+brew install poetry black terraform direnv podman libpq pre-commit
 ```
 
 Enable tab completion for poetry
