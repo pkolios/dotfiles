@@ -69,6 +69,9 @@ set encoding=utf-8
 " Maintain more context around the cursor
 set scrolloff=5
 
+" Use a single global status line
+set laststatus=3
+
 " Scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
