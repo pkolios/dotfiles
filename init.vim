@@ -72,6 +72,9 @@ set scrolloff=5
 " Use a single global status line
 set laststatus=3
 
+" Make cursor line more visible
+set cursorline
+
 " Scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
