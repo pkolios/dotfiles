@@ -21,7 +21,7 @@ brew install firefox google-chrome
 ## Install basic set of tools
 
 ```sh
-brew install git curl wget tree ripgrep neovim direnv p7zip keepassxc
+brew install git curl wget tree ripgrep neovim p7zip keepassxc
 ```
 
 ## Install terminal, shell & multiplexer
@@ -113,7 +113,7 @@ mkdir -p ~/.config/nvim
 ln -sv ~/.dotfiles/init.vim ~/.config/nvim/init.vim
 
 pip3 install neovim jedi 'python-lsp-server[all]' pyls-flake8 pylsp-mypy pyls-isort python-lsp-black pyls-memestra pylsp-rope
-npm install -g neovim
+npm install --location=global neovim
 gem install neovim
 nvim -c PlugUpdate
 
