@@ -31,7 +31,11 @@ VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 VI_MODE_SET_CURSOR=true
 
 # Autosuggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [[ "$(uname -p)" != "arm" ]]; then
+    source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh  # For x86
+else
+    source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh  # For ARM
+fi
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
 COMPLETION_WAITING_DOTS="true"
 
