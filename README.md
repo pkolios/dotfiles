@@ -21,7 +21,7 @@ brew install firefox google-chrome
 ## Install basic set of tools
 
 ```sh
-brew install git curl wget tree ripgrep neovim p7zip keepassxc
+brew install git curl wget tree ripgrep neovim direnv p7zip keepassxc
 ```
 
 ## Install terminal, shell & multiplexer
