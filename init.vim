@@ -84,6 +84,9 @@ set fo-=t   " don't automatically wrap text when typing
 " yank and paste with the system clipboard
 set clipboard=unnamedplus
 
+" disable mouse
+set mouse=
+
 " automatically open the location/quickfix window
 augroup CloseLoclistWindowGroup
   autocmd!
