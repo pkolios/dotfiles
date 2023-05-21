@@ -11,7 +11,6 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'folke/lsp-colors.nvim'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -24,8 +23,9 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'onsails/lspkind-nvim'
 
+Plug 'github/copilot.vim'
+
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'raimon49/requirements.txt.vim'
 call plug#end()
 
 " theme
@@ -80,6 +80,13 @@ nnoremap <C-y> 3<C-y>
 
 set nowrap  " don't automatically wrap on load
 set fo-=t   " don't automatically wrap text when typing
+
+" don't use TABs but spaces
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
 
 " yank and paste with the system clipboard
 set clipboard=unnamedplus
