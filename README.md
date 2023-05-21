@@ -34,7 +34,7 @@ brew install alacritty zsh tmux neofetch
 
 ```sh
 brew tap homebrew/cask-fonts
-brew install font-victor-mono font-iosevka-nerd-font
+brew install font-iosevka-nerd-font
 ```
 
 ## Configure git
