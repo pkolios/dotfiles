@@ -6,15 +6,14 @@ Plug 'mhinz/vim-startify'
 Plug 'rhysd/committia.vim'
 Plug 'romainl/vim-qf'
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'jremmen/vim-ripgrep'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'folke/trouble.nvim'
 
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -105,17 +104,6 @@ let g:startify_custom_header = startify#center(['(╯°□°)╯︵ ┻━┻'])
 let g:startify_change_to_dir = 0
 let g:startify_change_to_vcs_root = 1
 
-" Settings for ctrlp
-let g:ctrlp_max_height = 30
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
-set wildignore+=*.pyc
-set wildignore+=*_build/*
-set wildignore+=*/coverage/*
-
-" vim-ripgrep
-let g:rg_highlight = 1
-
 au FileType python source ~/.dotfiles/python.vim
 
 " Remap Q W and E to q w e
@@ -140,6 +128,15 @@ nnoremap <silent> <C-w>j :TmuxNavigateDown<cr>
 nnoremap <silent> <C-w>k :TmuxNavigateUp<cr>
 nnoremap <silent> <C-w>l :TmuxNavigateRight<cr>
 nnoremap <silent> <C-w>\ :TmuxNavigatePrevious<cr>
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Trouble toggle
+nnoremap <leader>e <cmd>TroubleToggle<cr>
 
 " For nvim-cmp
 set completeopt=menu,menuone,noselect
@@ -172,7 +169,9 @@ require'nvim-treesitter.configs'.setup {
 
 require("lspconfig").pylsp.setup {}
 
-require("trouble").setup {}
+require("trouble").setup {
+    mode = "document_diagnostics", -- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
+}
 
 require("indent_blankline").setup {
     space_char_blankline = " ",
@@ -227,7 +226,6 @@ local lspconfig = require('lspconfig')
 
 -- Mappings.
 local opts = { noremap=true, silent=true }
-vim.api.nvim_set_keymap('n', '<space>e', '<cmd>TroubleToggle<CR>', opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
