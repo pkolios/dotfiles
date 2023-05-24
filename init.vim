@@ -22,7 +22,7 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'onsails/lspkind-nvim'
 
-Plug 'github/copilot.vim'
+Plug 'zbirenbaum/copilot.lua'
 
 Plug 'nvim-lualine/lualine.nvim'
 call plug#end()
@@ -138,6 +138,9 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " Trouble toggle
 nnoremap <leader>e <cmd>TroubleToggle<cr>
 
+" Toggle copilot panel
+nnoremap <leader>c <cmd>Copilot panel<cr>
+
 " For nvim-cmp
 set completeopt=menu,menuone,noselect
 
@@ -185,18 +188,55 @@ require('lualine').setup {
   }
 }
 
+-- Copilot options
+require('copilot').setup({
+  panel = {
+    enabled = true,
+    auto_refresh = true,
+    keymap = {
+      jump_prev = "[[",
+      jump_next = "]]",
+      accept = "<CR>",
+    },
+    layout = {
+      position = "left", -- | top | left | right
+      ratio = 0.45
+    },
+  },
+  suggestion = {
+    enabled = true,
+    auto_trigger = true,
+    debounce = 75,
+    keymap = {
+      accept = "<tab>",
+      accept_word = false,
+      accept_line = false,
+      next = "<M-]>",
+      prev = "<M-[>",
+      dismiss = "<C-]>",
+    },
+  },
+  filetypes = {
+    yaml = false,
+    markdown = false,
+    help = false,
+    gitcommit = false,
+    gitrebase = false,
+    hgcommit = false,
+    svn = false,
+    cvs = false,
+    ["."] = false,
+  },
+  copilot_node_command = 'node', -- Node.js version must be > 16.x
+  server_opts_overrides = {},
+})
+
+local lspkind = require('lspkind')
+
 -- Setup nvim-cmp.
 local cmp = require'cmp'
 cmp.setup({
   mapping = {
-    ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-    ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ['<C-e>'] = cmp.mapping({
-      i = cmp.mapping.abort(),
-      c = cmp.mapping.close(),
-    }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     ['<Tab>'] = function(fallback)
       if cmp.visible() then
@@ -217,7 +257,10 @@ cmp.setup({
     { name = 'nvim_lsp', keyword_length = 3 },
     { name = 'buffer', keyword_length = 3 },
     { name = 'path' },
-  })
+  }),
+  formatting = {
+    format = lspkind.cmp_format()
+  },
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -256,11 +299,4 @@ for _, lsp in pairs(servers) do
     capabilities = capabilities,
   }
 end
-
-local lspkind = require('lspkind')
-cmp.setup {
-  formatting = {
-    format = lspkind.cmp_format({})
-  }
-}
 EOF
