@@ -23,6 +23,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'onsails/lspkind-nvim'
 
 Plug 'zbirenbaum/copilot.lua'
+Plug 'zbirenbaum/copilot-cmp'
 
 Plug 'nvim-lualine/lualine.nvim'
 call plug#end()
@@ -35,7 +36,8 @@ endif
 
 colorscheme tokyonight
 
-filetype plugin indent on     " required!
+" Disable nvim indentation in favor of treesitter
+filetype plugin indent off
 
 " Show leader command
 set showcmd
@@ -168,7 +170,7 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
   indent = {
-    enable = true
+    enable = true,
   },
 }
 
@@ -178,10 +180,8 @@ require("trouble").setup {
     mode = "document_diagnostics", -- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
 }
 
-require("indent_blankline").setup {
-    space_char_blankline = " ",
-    show_current_context = true,
-    show_current_context_start = true,
+require("ibl").setup {
+    indent = { char = "▏" }
 }
 
 require('lualine').setup {
@@ -193,7 +193,7 @@ require('lualine').setup {
 -- Copilot options
 require('copilot').setup({
   panel = {
-    enabled = true,
+    enabled = false,
     auto_refresh = true,
     keymap = {
       jump_prev = "[[",
@@ -206,8 +206,8 @@ require('copilot').setup({
     },
   },
   suggestion = {
-    enabled = true,
-    auto_trigger = true,
+    enabled = false,
+    auto_trigger = false,
     debounce = 75,
     keymap = {
       accept = "<tab>",
@@ -233,11 +233,38 @@ require('copilot').setup({
   server_opts_overrides = {},
 })
 
+-- Copilot cmp options
+require('copilot_cmp').setup()
+
 local lspkind = require('lspkind')
+lspkind.init({
+  symbol_map = {
+    Copilot = "",
+  },
+})
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", {fg ="#6CC644"})
 
 -- Setup nvim-cmp.
 local cmp = require'cmp'
+local border = {
+    { "╭", "CmpBorder" },
+    { "─", "CmpBorder" },
+    { "╮", "CmpBorder" },
+    { "│", "CmpBorder" },
+    { "╯", "CmpBorder" },
+    { "─", "CmpBorder" },
+    { "╰", "CmpBorder" },
+    { "│", "CmpBorder" },
+}
 cmp.setup({
+  window = {
+      documentation = {
+          border = border,
+      },
+      completion = {
+          border = border,
+      },
+  },
   mapping = {
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     ['<Tab>'] = function(fallback)
@@ -256,6 +283,7 @@ cmp.setup({
     end,
   },
   sources = cmp.config.sources({
+    { name = "copilot", group_index = 2 },
     { name = 'nvim_lsp', keyword_length = 3 },
     { name = 'buffer', keyword_length = 3 },
     { name = 'path' },
