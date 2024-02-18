@@ -1,9 +1,17 @@
 [user]
     name = Paris Kolios
     email = paris.k@gmail.com
+[github]
+    user = pkolios
 [core]
     editor = nvim
     excludesfile = ~/.global-gitignore
+[merge]
+    conflictstyle = zdiff3
+[init]
+    defaultBranch = main
+[rerere]
+    enabled = true
 [color]
     diff = auto
     status = auto
@@ -11,8 +19,6 @@
     ui = true
 [pager]
     branch = false
-[github]
-    user = pkolios
 [alias]
     co = checkout
     st = status
