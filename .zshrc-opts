@@ -23,7 +23,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
-plugins=(tmux vi-mode poetry docker docker-compose)
+plugins=(tmux vi-mode docker command-not-found)
 
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=false

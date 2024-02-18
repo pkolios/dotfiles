@@ -13,7 +13,7 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'folke/trouble.nvim'
 
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -232,7 +232,7 @@ require('copilot').setup({
   copilot_node_command = 'node', -- Node.js version must be > 16.x
   server_opts_overrides = {},
 })
-
+ 
 -- Copilot cmp options
 require('copilot_cmp').setup()
 
@@ -283,7 +283,7 @@ cmp.setup({
     end,
   },
   sources = cmp.config.sources({
-    { name = "copilot", group_index = 2 },
+    { name = "copilot", keyword_length = 1, group_index = 2 },
     { name = 'nvim_lsp', keyword_length = 3 },
     { name = 'buffer', keyword_length = 3 },
     { name = 'path' },
