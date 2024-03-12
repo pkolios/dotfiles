@@ -8,7 +8,7 @@ alias :q="exit"
 # ripgrep common args
 # -C 2: 2 lines context | -M 160: Print up to 160th line column
 alias rg='rg -C 2 -M 160'
-alias rgv='/usr/local/bin/rg'
+alias rgv='/opt/homebrew/bin/rg'
 
 # ls, mv, rm, cp
 alias ls="ls --color=always"
