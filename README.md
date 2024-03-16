@@ -65,7 +65,8 @@ rm alacritty.info
 Link `.alacritty.yml`.
 
 ```sh
-ln -sv ~/.dotfiles/.alacritty.yml ~/.alacritty.yml
+# ln -sv ~/.dotfiles/.alacritty.yml ~/.alacritty.yml
+ln -sv ~/.dotfiles/.alacritty.toml ~/.alacritty.toml
 ```
 
 ## Configure zsh
