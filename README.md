@@ -24,10 +24,10 @@ brew install firefox google-chrome
 brew install git curl wget tree ripgrep neovim p7zip keepassxc
 ```
 
-## Install terminal, shell & multiplexer
+## Install terminal, shell, multiplexer & tmux session manager
 
 ```sh
-brew install alacritty zsh tmux neofetch
+brew install alacritty zsh tmux neofetch smug
 ```
 
 ## Install fonts
