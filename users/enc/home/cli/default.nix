@@ -11,6 +11,7 @@
     tree
   ];
 
+  programs.btop.enable = true;
   programs.eza.enable = true;
   programs.neovim.enable = true;
 }

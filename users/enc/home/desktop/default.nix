@@ -8,5 +8,9 @@
   home.packages = with pkgs; [
     insync
     keepassxc
+    signal-desktop
+    spotify
+    vlc
+    whatsapp-for-linux
   ];
 }
