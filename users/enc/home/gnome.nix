@@ -6,6 +6,9 @@
       natural-scroll = false;
     };
     "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+    "org/gnome/desktop/interface" = {
       clock-show-date = false;
     };
     "org/gnome/shell/keybindings" = {
