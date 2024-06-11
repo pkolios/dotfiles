@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./docker-compose.nix
     ./git.nix
     ./ripgrep.nix
   ];
