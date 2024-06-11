@@ -19,7 +19,6 @@ in
 
       window = {
         startup_mode = "Maximized";
-	decorations = "None";
         padding.x = 3;
         padding.y = 3;
       };
