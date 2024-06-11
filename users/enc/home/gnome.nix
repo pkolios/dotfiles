@@ -8,5 +8,9 @@
     "org/gnome/desktop/interface" = {
       clock-show-date = false;
     };
+    "org/gnome/shell/keybindings" = {
+      screenshot-window = [];
+      show-screenshot-ui = ["<Alt>Print"];
+    };
   };
 }
