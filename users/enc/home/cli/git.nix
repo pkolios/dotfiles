@@ -1,0 +1,38 @@
+{ config, pkgs, ... }:
+
+{
+  programs.git = {
+    enable = true;
+    userName = "Paris Kolios";
+    userEmail = "paris.k@gmail.com";
+    aliases = {
+      co = "checkout";
+      st = "status";
+      gl = "log --graph --all --decorate --date=relative --abbrev-commit";
+      fixup = "commit --fixup";
+      branch-name = "!git rev-parse --abbrev-ref HEAD";
+      unstage = "reset HEAD~";
+      rlog = "!git log $(git describe --tags --abbrev=0)..HEAD --oneline";
+    };
+
+    ignores = [
+      "*~"
+      "*.swp"
+    ];
+
+    extraConfig = {
+      github.user = "pkolios";
+      core.editor = "nvim";
+      merge.conflictstyle = "zdiff3";
+      rerere.enabled = true;
+      init.defaultBranch = "main";
+      color = {
+        diff = "auto";
+        status = "auto";
+        branch = "auto";
+        ui = "auto";
+      };
+      pager.branch = true;
+    };
+  };
+}
