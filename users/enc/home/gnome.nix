@@ -5,7 +5,6 @@ let
 in
 {
   home.packages = with pkgs.gnomeExtensions; [
-    useless-gaps
     clipboard-indicator
   ];
 
@@ -27,7 +26,6 @@ in
       enabled-extensions = with pkgs.gnomeExtensions; [
         system-monitor.extensionUuid
         removable-drive-menu.extensionUuid
-        useless-gaps.extensionUuid
         clipboard-indicator.extensionUuid
       ];
     };
