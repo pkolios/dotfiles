@@ -15,15 +15,11 @@
   };
 
   home.shellAliases = {
-    vim = "nvim";
-    vi = "nvim";
-    # :q = "exit";
-    
     # ls, mv, rm, cp
-    ls = "ls --color";
-    l = "ls -lAh --color";
-    la = "ls -lah --color";
-    ll = "ls -lh --color";
+    ls = "eza";
+    l = "eza -lAh";
+    la = "eza -lah";
+    ll = "eza -lh";
     mv = "mv -v";
     rm = "rm -i -v";
     cp = "cp -v";

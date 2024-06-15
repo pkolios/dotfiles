@@ -35,7 +35,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.enc = import ./users/enc/home;
             home-manager.extraSpecialArgs = { inherit inputs; };
-	    home-manager.backupFileExtension = "backup";
+            home-manager.backupFileExtension = "backup";
           }
         ];
       };

@@ -28,16 +28,17 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
+  # English Ireland locale is the most sensible alternative until eu_EN becomes a thing
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "el_GR.UTF-8";
-    LC_IDENTIFICATION = "el_GR.UTF-8";
-    LC_MEASUREMENT = "el_GR.UTF-8";
-    LC_MONETARY = "el_GR.UTF-8";
-    LC_NAME = "el_GR.UTF-8";
-    LC_NUMERIC = "el_GR.UTF-8";
-    LC_PAPER = "el_GR.UTF-8";
-    LC_TELEPHONE = "el_GR.UTF-8";
-    LC_TIME = "el_GR.UTF-8";
+    LC_ADDRESS = "en_IE.UTF-8";
+    LC_IDENTIFICATION = "en_IE.UTF-8";
+    LC_MEASUREMENT = "en_IE.UTF-8";
+    LC_MONETARY = "en_IE.UTF-8";
+    LC_NAME = "en_IE.UTF-8";
+    LC_NUMERIC = "en_IE.UTF-8";
+    LC_PAPER = "en_IE.UTF-8";
+    LC_TELEPHONE = "en_IE.UTF-8";
+    LC_TIME = "en_IE.UTF-8";
   };
 
   # Enable the X11 windowing system.
