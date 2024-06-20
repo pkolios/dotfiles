@@ -3,10 +3,9 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -96,7 +95,7 @@
   nix.gc = {
     automatic = lib.mkDefault true;
     dates = lib.mkDefault "weekly";
-    options = lib.mkDefault "--delete-older-than 7d";
+    options = lib.mkDefault "--delete-older-than 30d";
   };
 
   # Allow unfree packages
@@ -107,14 +106,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    keyd
-    git
-    nerdfonts
-    wget
-    curl
-  ];
+  environment.systemPackages = with pkgs; [ vim keyd git nerdfonts wget curl ];
 
   # Set the default editor to vim
   environment.variables.EDITOR = "vim";
@@ -136,11 +128,7 @@
     keyboards = {
       default = {
         ids = [ "*" ];
-        settings = {
-          main = {
-            capslock = "overload(control, esc)";
-          };
-        };
+        settings = { main = { capslock = "overload(control, esc)"; }; };
       };
     };
   };
