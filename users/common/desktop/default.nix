@@ -1,9 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports = [
-    ./firefox.nix
-  ];
+  imports = [ ./firefox.nix ];
 
   home.packages = with pkgs; [
     insync

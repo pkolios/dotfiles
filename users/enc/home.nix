@@ -1,12 +1,8 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports = [
-    ./shell
-    ./cli
-    ./desktop
-    ./gnome.nix
-  ];
+  imports =
+    [ ../common/shell ../common/cli ../common/desktop ../common/gnome.nix ];
   home.username = "enc";
   home.homeDirectory = "/home/enc";
   # This value determines the Home Manager release that your configuration is
