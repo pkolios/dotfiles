@@ -260,6 +260,13 @@ vim.keymap.set("n", "<leader>f", function()
 	conform.format({ async = true, lsp_fallback = true })
 end, { desc = "[F]ormat buffer" })
 
+-- Copilot
+require("copilot").setup({
+	suggestion = { enabled = false },
+	panel = { enabled = false },
+})
+require("copilot_cmp").setup()
+
 -- Autocompletion
 local cmp = require("cmp")
 local luasnip = require("luasnip")
@@ -267,6 +274,16 @@ local luasnip = require("luasnip")
 luasnip.config.setup({})
 require("luasnip.loaders.from_vscode").lazy_load()
 
+local border = {
+	{ "╭", "CmpBorder" },
+	{ "─", "CmpBorder" },
+	{ "╮", "CmpBorder" },
+	{ "│", "CmpBorder" },
+	{ "╯", "CmpBorder" },
+	{ "─", "CmpBorder" },
+	{ "╰", "CmpBorder" },
+	{ "│", "CmpBorder" },
+}
 cmp.setup({
 	snippet = {
 		-- REQUIRED - you must specify a snippet engine
@@ -280,6 +297,15 @@ cmp.setup({
 	},
 
 	completion = { completeopt = "menu,menuone,noinsert" },
+
+	window = {
+		documentation = {
+			border = border,
+		},
+		completion = {
+			border = border,
+		},
+	},
 
 	mapping = cmp.mapping.preset.insert({
 		-- Select the [n]ext item
@@ -332,6 +358,7 @@ cmp.setup({
 
 	sources = {
 		{ name = "nvim_lsp" },
+		{ name = "copilot" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },

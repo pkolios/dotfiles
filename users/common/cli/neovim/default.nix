@@ -13,6 +13,9 @@
     vimAlias = true;
     vimdiffAlias = true;
 
+    withPython3 = true;
+    withNodeJs = true;
+
     extraPackages = with pkgs; [
       # Search
       fzf
@@ -54,6 +57,8 @@
       nvim-autopairs
       committia-vim
       vim-tmux-navigator
+      copilot-lua
+      copilot-cmp
       nvim-treesitter.withAllGrammars
     ];
   };
