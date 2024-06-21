@@ -11,6 +11,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.initrd.luks.devices."luks-25c5891d-fe97-47cc-b54f-a7875fe17de4".device = "/dev/disk/by-uuid/25c5891d-fe97-47cc-b54f-a7875fe17de4";
   networking.hostName = "tyche"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
