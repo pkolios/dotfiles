@@ -39,6 +39,24 @@
           }
         ];
       };
+
+      tyche = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/tyche/configuration.nix
+
+          # make home-manager as a module of nixos
+          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.paris = import ./users/paris/home.nix;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.backupFileExtension = "backup";
+          }
+        ];
+      };
     };
   };
 }
