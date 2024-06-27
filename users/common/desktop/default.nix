@@ -7,6 +7,7 @@
     insync
     keepassxc
     signal-desktop
+    slack
     spotify
     vlc
     whatsapp-for-linux
