@@ -51,6 +51,7 @@
       cmp-path
       cmp-buffer
       todo-comments-nvim
+      alpha-nvim
       mini-nvim
       indent-blankline-nvim
       nvim-lint

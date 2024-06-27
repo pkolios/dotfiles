@@ -370,6 +370,9 @@ require("todo-comments").setup({
 	signs = false,
 })
 
+-- alpha is a fast and fully programmable greeter
+require("alpha").setup(require("alpha.themes.startify").config)
+
 -- Collection of various small independent plugins/modules
 -- Better Around/Inside textobjects
 -- Examples:

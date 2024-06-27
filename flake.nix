@@ -22,6 +22,7 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
+
       nyx = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
