@@ -1,13 +1,7 @@
 { config, pkgs, lib, ... }:
 
-let
-  mkTuple = lib.hm.gvariant.mkTuple;
-in
-{
-  home.packages = with pkgs.gnomeExtensions; [
-    clipboard-indicator
-  ];
-
+let mkTuple = lib.hm.gvariant.mkTuple;
+in {
   dconf.settings = {
     "org/gnome/shell" = {
 
@@ -20,32 +14,25 @@ in
 
       disable-user-extensions = false;
 
-      disabled-extensions = [];
+      disabled-extensions = [ ];
 
       # `gnome-extensions list` for a list
       enabled-extensions = with pkgs.gnomeExtensions; [
         system-monitor.extensionUuid
         removable-drive-menu.extensionUuid
-        clipboard-indicator.extensionUuid
       ];
     };
 
-    "org/gnome/desktop/peripherals/touchpad" = {
-      natural-scroll = false;
-    };
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-    "org/gnome/desktop/interface" = {
-      clock-show-date = false;
-    };
+    "org/gnome/desktop/peripherals/touchpad" = { natural-scroll = false; };
+    "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
+    "org/gnome/desktop/interface" = { clock-show-date = false; };
     "org/gnome/desktop/input-sources" = {
       show-all-sources = true;
       sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "gr" ]) ];
     };
     "org/gnome/shell/keybindings" = {
-      screenshot-window = [];
-      show-screenshot-ui = ["<Alt>Print"];
+      screenshot-window = [ ];
+      show-screenshot-ui = [ "<Alt>Print" ];
     };
   };
 }
