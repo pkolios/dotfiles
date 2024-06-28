@@ -11,7 +11,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-d7d8e9c5-a412-4da1-ba09-cc3679c0fa7a".device = "/dev/disk/by-uuid/d7d8e9c5-a412-4da1-ba09-cc3679c0fa7a";
+  boot.initrd.luks.devices."luks-d7d8e9c5-a412-4da1-ba09-cc3679c0fa7a".device =
+    "/dev/disk/by-uuid/d7d8e9c5-a412-4da1-ba09-cc3679c0fa7a";
   networking.hostName = "tyche"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -80,16 +81,18 @@
   virtualisation.docker = {
     enable = true;
     rootless = {
-      enable = false;
-      # setSocketVariable = true;
+      enable = true;
+      setSocketVariable = true;
     };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.groups.paris.gid = 1000;
   users.users.paris = {
     isNormalUser = true;
     description = "paris";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    group = "paris";
+    extraGroups = [ "paris" "networkmanager" "wheel" "docker" ];
   };
 
   # do garbage collection weekly to keep disk usage low
