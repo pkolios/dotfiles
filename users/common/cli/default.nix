@@ -22,7 +22,6 @@
     xclip = "xclip -selection clipboard";
 
     # nix
-    nix-rebuild = "sudo nixos-rebuild switch --flake .#nyx";
     nix-clean =
       "sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 7d";
     nix-gc = "sudo nix-collect-garbage --delete-old";
