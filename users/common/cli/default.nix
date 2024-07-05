@@ -8,6 +8,13 @@
   programs.btop.enable = true;
   programs.eza.enable = true;
 
+  programs = {
+    direnv = {
+      enable = true;
+      nix-direnv = { enable = true; };
+    };
+  };
+
   home.shellAliases = {
     # ls, mv, rm, cp
     ls = "eza";

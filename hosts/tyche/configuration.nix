@@ -126,6 +126,9 @@
   # Necessary for NixOS gnome configuration
   programs.dconf.enable = true;
 
+  # Run unpatched dynamic binaries on NixOS
+  programs.nix-ld.enable = true;
+
   # List services that you want to enable:
   services.keyd = {
     enable = true;
