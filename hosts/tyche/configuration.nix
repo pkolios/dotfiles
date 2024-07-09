@@ -79,11 +79,12 @@
 
   # Enable docker
   virtualisation.docker = {
+    # extraOptions = "--userns-remap=paris";
     enable = true;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
+    # rootless = {
+    #   enable = true;
+    #   setSocketVariable = true;
+    # };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
