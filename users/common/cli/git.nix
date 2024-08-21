@@ -15,10 +15,7 @@
       rlog = "!git log $(git describe --tags --abbrev=0)..HEAD --oneline";
     };
 
-    ignores = [
-      "*~"
-      "*.swp"
-    ];
+    ignores = [ "*~" "*.swp" ];
 
     extraConfig = {
       github.user = "pkolios";
@@ -26,6 +23,8 @@
       merge.conflictstyle = "zdiff3";
       rerere.enabled = true;
       init.defaultBranch = "main";
+      push.default = "upstream";
+      push.autoSetupRemote = true;
       color = {
         diff = "auto";
         status = "auto";
