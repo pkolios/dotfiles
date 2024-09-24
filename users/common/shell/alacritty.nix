@@ -20,7 +20,6 @@ in {
         startup_mode = "Maximized";
         padding.x = 3;
         padding.y = 3;
-        decorations = "None";
       };
 
       # https://github.com/folke/tokyonight.nvim/blob/main/extras/alacritty/tokyonight_storm.toml
