@@ -1,9 +1,13 @@
 { pkgs, ... }:
 
 {
+
+  home.packages = with pkgs; [ any-nix-shell ];
+
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
+      ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
       set fish_greeting # Disable greeting
       set -g fish_key_bindings fish_vi_key_bindings
 
@@ -42,13 +46,12 @@
       set -g fish_pager_color_completion $foreground
       set -g fish_pager_color_description $comment
       set -g fish_pager_color_selected_background --background=$selection
-      
+
       if status is-interactive
       and not set -q TMUX
         exec tmux attach
       end
     '';
-    plugins = [
-    ];
+    plugins = [ ];
   };
 }
