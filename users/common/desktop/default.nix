@@ -12,4 +12,14 @@
     vlc
     whatsapp-for-linux
   ];
+
+  home.neovide = {
+    enable = true;
+    settings = {
+      font = {
+        normal = [ "Iosevka Nerd Font Mono" ];
+        size = 12.0;
+      };
+    };
+  };
 }
