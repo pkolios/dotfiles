@@ -15,6 +15,9 @@ nix flake update
 # Or replace only the specific input, such as home-manager:
 nix flake update home-manager
 
+# Update home manager
+sudo nix-channel --update
+
 ```
 
 ### Downgrading - upgrading packages

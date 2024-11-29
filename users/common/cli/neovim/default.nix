@@ -24,7 +24,7 @@
       pyright
       nodePackages.typescript-language-server
       # Formatters / Linters
-      nixfmt
+      nixfmt-rfc-style
       prettierd
       ruff
       stylua
