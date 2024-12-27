@@ -26,6 +26,7 @@
       # Formatters / Linters
       nixfmt-rfc-style
       prettierd
+      biome
       ruff
       stylua
     ];
