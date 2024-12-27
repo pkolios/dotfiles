@@ -1,13 +1,17 @@
 { pkgs, ... }:
 
-let font = "Iosevka Nerd Font Mono";
-in {
+let
+  font = "Iosevka Nerd Font Mono";
+in
+{
   programs.alacritty = {
     enable = true;
     settings = {
-      shell.program = "${pkgs.fish}/bin/fish";
+      terminal.shell.program = "${pkgs.fish}/bin/fish";
       scrolling.history = 10000;
-      env = { term = "xterm-256color"; };
+      env = {
+        term = "xterm-256color";
+      };
 
       font = {
         normal.family = font;

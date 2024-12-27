@@ -218,7 +218,7 @@ local servers = {
 		-- capabilities = {},
 		-- settings = {},
 	},
-	tsserver = {},
+	ts_ls = {},
 }
 local lspconfig = require("lspconfig")
 for server_name, _ in pairs(servers) do
