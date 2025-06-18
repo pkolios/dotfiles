@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+
+  home.packages = with pkgs; [
+    delta
+  ];
+
   programs.git = {
     enable = true;
     userName = "Paris Kolios";
@@ -15,11 +20,16 @@
       rlog = "!git log $(git describe --tags --abbrev=0)..HEAD --oneline";
     };
 
-    ignores = [ "*~" "*.swp" ];
+    ignores = [
+      "*~"
+      "*.swp"
+    ];
 
     extraConfig = {
       github.user = "pkolios";
       core.editor = "nvim";
+      core.pager = "delta";
+      interactive.diffFilter = "delta --color-only";
       merge.conflictstyle = "zdiff3";
       rerere.enabled = true;
       init.defaultBranch = "main";
