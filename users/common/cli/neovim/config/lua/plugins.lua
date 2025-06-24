@@ -215,6 +215,30 @@ local servers = {
 		-- settings = {},
 	},
 	ts_ls = {},
+	gopls = {
+		cmd = { "gopls" },
+		filetypes = { "go", "gomod", "gowork" },
+		settings = {
+			gopls = {
+				completeUnimported = true,
+				usePlaceholders = true,
+				hints = {
+					compositeLiteralFields = true,
+					compositeLiteralTypes = true,
+					constantValues = true,
+					parameterNames = true,
+					rangeVariableTypes = true,
+				},
+				codelenses = {
+					generate = true, -- show the `go generate` lens.
+					gc_details = true, -- show a code lens toggling the display of gc's choices.
+					test = true,
+					upgrade_dependency = true,
+					tidy = true,
+				},
+			},
+		},
+	},
 }
 local lspconfig = require("lspconfig")
 for server_name, _ in pairs(servers) do
@@ -249,6 +273,7 @@ conform.setup({
 		javascript = { "prettierd", "biome", "biome-check", "prettier", stop_after_first = true },
 		typescript = { "prettierd", "biome", "biome-check", "prettier", stop_after_first = true },
 		nix = { "nixfmt" },
+		go = { "gofmt", "goimports-reviser", "golines" },
 		["*"] = { "trim_newlines", "trim_whitespace" },
 	},
 })
@@ -410,6 +435,7 @@ require("ibl").setup({
 require("lint").linters_by_ft = {
 	nix = { "nix" },
 	python = { "ruff" },
+	go = { "golangcilint" },
 }
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	callback = function()

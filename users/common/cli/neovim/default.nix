@@ -23,12 +23,14 @@
       # LSP
       pyright
       nodePackages.typescript-language-server
+      gopls
       # Formatters / Linters
       nixfmt-rfc-style
       prettierd
       biome
       ruff
       stylua
+      golangci-lint
     ];
 
     plugins = with pkgs.vimPlugins; [
