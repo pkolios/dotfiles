@@ -1,9 +1,16 @@
 # Edit this configuration file to define what should be installed on your system.  Help is available in the configuration.nix(5) man page and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, inputs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 
@@ -46,6 +53,10 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.gnome.sessionPath = with pkgs.gnomeExtensions; [
+    system-monitor
+    removable-drive-menu
+  ];
 
   # Configure keymap in X11
   services.xserver = {
@@ -57,7 +68,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -88,7 +99,11 @@
   users.users.enc = {
     isNormalUser = true;
     description = "enc";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
   };
 
   # do garbage collection weekly to keep disk usage low
@@ -102,11 +117,24 @@
   nixpkgs.config.allowUnfree = true;
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [ vim keyd git nerdfonts wget curl ];
+  environment.systemPackages = with pkgs; [
+    vim
+    keyd
+    git
+    nerd-fonts.iosevka
+    nerd-fonts.iosevka-term
+    wget
+    curl
+    gnomeExtensions.system-monitor
+    gnomeExtensions.removable-drive-menu
+  ];
 
   # Set the default editor to vim
   environment.variables.EDITOR = "vim";
@@ -131,7 +159,11 @@
     keyboards = {
       default = {
         ids = [ "*" ];
-        settings = { main = { capslock = "overload(control, esc)"; }; };
+        settings = {
+          main = {
+            capslock = "overload(control, esc)";
+          };
+        };
       };
     };
   };
