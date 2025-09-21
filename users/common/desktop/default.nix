@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [ ./firefox.nix ];
@@ -6,11 +11,10 @@
   home.packages = with pkgs; [
     insync
     keepassxc
-    neovide
+    obsidian
     signal-desktop
     slack
     spotify
     vlc
-    whatsapp-for-linux
   ];
 }
