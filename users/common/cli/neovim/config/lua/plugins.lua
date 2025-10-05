@@ -239,6 +239,7 @@ local servers = {
 			},
 		},
 	},
+	astro = {},
 }
 local lspconfig = require("lspconfig")
 for server_name, _ in pairs(servers) do
@@ -274,6 +275,7 @@ conform.setup({
 		typescript = { "prettierd", "biome", "biome-check", "prettier", stop_after_first = true },
 		nix = { "nixfmt" },
 		go = { "gofmt", "goimports-reviser", "golines" },
+		astro = { "prettier" },
 		["*"] = { "trim_newlines", "trim_whitespace" },
 	},
 })

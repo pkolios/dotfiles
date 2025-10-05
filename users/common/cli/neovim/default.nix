@@ -24,6 +24,7 @@
       pyright
       nodePackages.typescript-language-server
       gopls
+      astro-language-server
       # Formatters / Linters
       nixfmt-rfc-style
       prettierd
@@ -64,6 +65,8 @@
       copilot-lua
       copilot-cmp
       nvim-treesitter.withAllGrammars
+      nvim-treesitter-parsers.html
+      nvim-treesitter-parsers.astro
     ];
   };
 }
