@@ -1,8 +1,18 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [ ../common/shell ../common/cli ../common/desktop ../common/gnome.nix ];
+  imports = [
+    ../common/shell
+    ../common/cli
+    ../common/desktop
+    ../common/gnome.nix
+    ../common/wallpapers.nix
+  ];
   home.username = "paris";
   home.homeDirectory = "/home/paris";
   # This value determines the Home Manager release that your configuration is
