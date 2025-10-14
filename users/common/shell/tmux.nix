@@ -16,6 +16,13 @@
       set -g status-position top
       set-option -g prefix2 C-b
 
+      # Start windows and panes index at 1, not 0.
+      set -g base-index 1
+      setw -g pane-base-index 1
+
+      # Ensure window index numbers get reordered on delete.
+      set-option -g renumber-windows on
+
       # True color settings
       set -g default-terminal "$TERM"
       set -ag terminal-overrides ",$TERM:Tc"
