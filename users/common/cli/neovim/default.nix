@@ -25,6 +25,7 @@
       nodePackages.typescript-language-server
       gopls
       astro-language-server
+      rust-analyzer
       # Formatters / Linters
       nixfmt-rfc-style
       prettierd
@@ -32,6 +33,7 @@
       ruff
       stylua
       golangci-lint
+      rustfmt
     ];
 
     plugins = with pkgs.vimPlugins; [

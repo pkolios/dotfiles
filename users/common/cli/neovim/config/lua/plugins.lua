@@ -240,6 +240,7 @@ local servers = {
 		},
 	},
 	astro = {},
+	rust_analyzer = {},
 }
 local lspconfig = require("lspconfig")
 for server_name, _ in pairs(servers) do
@@ -276,6 +277,7 @@ conform.setup({
 		nix = { "nixfmt" },
 		go = { "gofmt", "goimports-reviser", "golines" },
 		astro = { "prettier" },
+		rust = { "rustfmt" },
 		["*"] = { "trim_newlines", "trim_whitespace" },
 	},
 })
