@@ -242,14 +242,14 @@ local servers = {
 	astro = {},
 	rust_analyzer = {},
 }
-local lspconfig = require("lspconfig")
 for server_name, _ in pairs(servers) do
 	local opts = servers[server_name] or {}
 	-- This handles overriding only values explicitly passed
 	-- by the server configuration above. Useful when disabling
 	-- certain features of an LSP (for example, turning off formatting for tsserver)
 	opts.capabilities = vim.tbl_deep_extend("force", {}, capabilities, opts.capabilities or {})
-	lspconfig[server_name].setup(opts)
+	vim.lsp.config(server_name, opts)
+	vim.lsp.enable({ server_name })
 end
 
 -- Autoformat
@@ -289,6 +289,9 @@ end, { desc = "[F]ormat buffer" })
 require("copilot").setup({
 	suggestion = { enabled = false },
 	panel = { enabled = false },
+	telemetry = {
+		telemetryLevel = "off",
+	},
 })
 require("copilot_cmp").setup()
 
