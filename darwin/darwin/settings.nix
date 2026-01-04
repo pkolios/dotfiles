@@ -21,6 +21,12 @@
         DisableConsoleAccess = true;
       };
 
+      trackpad = {
+        Clicking = true; # enable tap to click()
+        TrackpadRightClick = true; # enable two finger right click
+        TrackpadThreeFingerDrag = false; # enable three finger drag
+      };
+
       finder = {
         AppleShowAllFiles = true; # hidden files
         AppleShowAllExtensions = true; # file extensions
@@ -41,6 +47,7 @@
       };
 
       NSGlobalDomain = {
+        "com.apple.swipescrolldirection" = false; # natural scrolling off
         NSAutomaticSpellingCorrectionEnabled = false;
         NSAutomaticCapitalizationEnabled = false;
         NSAutomaticPeriodSubstitutionEnabled = false;
