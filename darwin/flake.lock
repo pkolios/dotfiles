@@ -58,6 +58,28 @@
         "type": "github"
       }
     },
+    "firefox-addons": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "pkgs/firefox-addons",
+        "lastModified": 1767473845,
+        "narHash": "sha256-Pvd0l14qYA4jBS+JSCufoj8qFpeu2dt0Q9zBvpeLKac=",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "rev": "7f7d9e8b61abade02c6dc0d530ba6b43a50acead",
+        "type": "gitlab"
+      },
+      "original": {
+        "dir": "pkgs/firefox-addons",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "type": "gitlab"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -273,6 +295,7 @@
     "root": {
       "inputs": {
         "darwin": "darwin",
+        "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
         "mac-app-util": "mac-app-util",
         "nix-homebrew": "nix-homebrew",

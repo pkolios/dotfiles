@@ -53,7 +53,6 @@ Use homebrew for desktop applications configured manually and nix for cli apps a
 
 ## TODO
 
-- [ ] Install / configure firefox
 - [ ] Figure out how to handle ctrl / cmd keys
 - [ ] Install / configure docker & podman
 

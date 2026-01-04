@@ -18,6 +18,11 @@
     # util that adds nix installed apps in osx spotlight
     mac-app-util.url = "github:hraban/mac-app-util";
 
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs =
@@ -28,6 +33,7 @@
       home-manager,
       nix-homebrew,
       mac-app-util,
+      firefox-addons,
       ...
     }@inputs:
     let
