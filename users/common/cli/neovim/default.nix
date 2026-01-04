@@ -27,6 +27,7 @@
       astro-language-server
       rust-analyzer
       # Formatters / Linters
+      tree-sitter
       nixfmt-rfc-style
       prettierd
       biome
@@ -67,8 +68,6 @@
       copilot-lua
       copilot-cmp
       nvim-treesitter.withAllGrammars
-      nvim-treesitter-parsers.html
-      nvim-treesitter-parsers.astro
     ];
   };
 }
