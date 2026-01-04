@@ -47,7 +47,22 @@ nix flake update
 darwin-rebuild switch --flake .
 ```
 
+## Notes
+
+Use homebrew for desktop applications configured manually and nix for cli apps and apps configured via home-manager
+
+## TODO
+
+- [ ] Fix neovim treesitter
+- [ ] Enable neovim github copilot
+- [ ] Fix clipboard (nvim / host)
+- [ ] Install / configure firefox
+- [ ] Install karabiner and configure caps-lock -> ctrl (hold) / esc (tap)
+- [ ] Figure out how to handle ctrl / cmd keys
+- [ ] Install / configure docker & podman
 
 ## References
 
 https://nixcademy.com/posts/nix-on-macos/
+https://dreamsofcode.io/blog/nix-darwin-my-favorite-package-manager-for-macos
+https://github.com/dustinlyons/nixos-config/tree/main?tab=readme-ov-file#5-make-apps-executable
