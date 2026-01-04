@@ -53,11 +53,7 @@ Use homebrew for desktop applications configured manually and nix for cli apps a
 
 ## TODO
 
-- [ ] Fix neovim treesitter
-- [ ] Enable neovim github copilot
-- [ ] Fix clipboard (nvim / host)
 - [ ] Install / configure firefox
-- [ ] Install karabiner and configure caps-lock -> ctrl (hold) / esc (tap)
 - [ ] Figure out how to handle ctrl / cmd keys
 - [ ] Install / configure docker & podman
 

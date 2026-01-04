@@ -10,6 +10,11 @@
 
     startup.chime = false;
 
+    keyboard = {
+      remapCapsLockToControl = true; # combined with hammerspoon
+      enableKeyMapping = true; # Allows for skhd
+    };
+
     defaults = {
       loginwindow = {
         GuestEnabled = false;
@@ -40,8 +45,8 @@
         NSAutomaticCapitalizationEnabled = false;
         NSAutomaticPeriodSubstitutionEnabled = false;
         NSAutomaticWindowAnimationsEnabled = false;
-        KeyRepeat = 1; # Fastest
-        InitialKeyRepeat = 15;
+        KeyRepeat = 2; # 1 is the fastest
+        InitialKeyRepeat = 20;
       };
     };
   };

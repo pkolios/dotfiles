@@ -17,12 +17,13 @@
     casks = [
       # OS enhancements
       # "aerospace"
+      "hammerspoon"
 
       # messaging
       "slack"
-      "signal"
 
       # other
+      "keepassxc"
       "1password"
       "spotify"
     ];

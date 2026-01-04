@@ -7,6 +7,7 @@
 
   home = {
     username = primaryUser;
+    homeDirectory = "/Users/${primaryUser}";
     stateVersion = "25.05";
     sessionVariables = {
       EDITOR = "nvim";

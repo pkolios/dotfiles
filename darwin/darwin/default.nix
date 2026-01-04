@@ -9,6 +9,7 @@
   imports = [
     ./homebrew.nix
     ./settings.nix
+    ./hammerspoon.nix
     inputs.mac-app-util.darwinModules.default
     inputs.home-manager.darwinModules.home-manager
     inputs.nix-homebrew.darwinModules.nix-homebrew
