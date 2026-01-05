@@ -27,6 +27,8 @@
         TrackpadThreeFingerDrag = false; # enable three finger drag
       };
 
+      ".GlobalPreferences"."com.apple.mouse.scaling" = 1.5;
+
       finder = {
         AppleShowAllFiles = true; # hidden files
         AppleShowAllExtensions = true; # file extensions
