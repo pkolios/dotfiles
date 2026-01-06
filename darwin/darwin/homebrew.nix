@@ -26,6 +26,7 @@
       "keepassxc"
       "1password"
       "spotify"
+      "google-chrome"
     ];
     # brews = [
     #   "docker"
