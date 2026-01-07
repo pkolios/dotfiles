@@ -1,4 +1,4 @@
-{ primaryUser, ... }:
+{ pkgs, primaryUser, ... }:
 {
   imports = [
     ../../users/common/cli
@@ -15,5 +15,9 @@
       BROWSER = "firefox";
       TERMINAL = "alacritty";
     };
+    packages = with pkgs; [
+      btop
+      claude-code
+    ];
   };
 }
