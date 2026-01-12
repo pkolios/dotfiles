@@ -28,6 +28,7 @@
       "spotify"
       "google-chrome"
       "microsoft-excel"
+      "the-unarchiver"
     ];
     # brews = [
     #   "docker"
