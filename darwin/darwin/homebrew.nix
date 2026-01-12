@@ -27,6 +27,7 @@
       "1password"
       "spotify"
       "google-chrome"
+      "microsoft-excel"
     ];
     # brews = [
     #   "docker"
