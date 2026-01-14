@@ -29,6 +29,7 @@
       "google-chrome"
       "microsoft-excel"
       "the-unarchiver"
+      "kap"
     ];
     # brews = [
     #   "docker"
