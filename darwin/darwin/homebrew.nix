@@ -25,6 +25,7 @@
       # other
       "keepassxc"
       "1password"
+      "dbeaver-community"
       "spotify"
       "google-chrome"
       "microsoft-excel"
