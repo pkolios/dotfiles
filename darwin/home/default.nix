@@ -18,6 +18,8 @@
     packages = with pkgs; [
       btop
       claude-code
+      wireguard-tools
+      wireguard-ui
     ];
   };
 }
