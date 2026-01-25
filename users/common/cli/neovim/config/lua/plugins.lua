@@ -460,7 +460,7 @@ local cmp = require("cmp")
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 -- Highlight, edit, and navigate code
-local configs = require("nvim-treesitter.config")
+local configs = require("nvim-treesitter.configs")
 configs.setup({
 	highlight = {
 		enable = true,
