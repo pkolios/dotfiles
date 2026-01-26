@@ -3,7 +3,7 @@
   imports = [
     ../../users/common/cli
     ../../users/common/shell
-    ../../users/common/desktop/firefox.nix
+    ./firefox.nix
   ];
 
   home = {

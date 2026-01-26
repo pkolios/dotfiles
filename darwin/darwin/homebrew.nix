@@ -22,6 +22,9 @@
       # messaging
       "slack"
 
+      # browsers
+      "firefox"
+
       # other
       "keepassxc"
       "1password"
