@@ -11,7 +11,6 @@
   home.packages = with pkgs; [
     insync
     keepassxc
-    obsidian
     signal-desktop
     slack
     spotify
