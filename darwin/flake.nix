@@ -23,6 +23,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Always up-to-date Nix package for Claude Code
+    claude-code.url = "github:sadjow/claude-code-nix";
   };
 
   outputs =
@@ -34,6 +36,7 @@
       nix-homebrew,
       mac-app-util,
       firefox-addons,
+      claude-code,
       ...
     }@inputs:
     let

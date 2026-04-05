@@ -17,7 +17,8 @@
     };
     packages = with pkgs; [
       btop
-      claude-code
+      # claude-code This uses the npm registry that Anthropic discontinued after the recent leak
+      claude-code-bin
       wireguard-tools
       wireguard-ui
     ];

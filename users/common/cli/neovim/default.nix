@@ -22,13 +22,13 @@
       ripgrep
       # LSP
       pyright
-      nodePackages.typescript-language-server
+      typescript-language-server
       gopls
       astro-language-server
       rust-analyzer
       # Formatters / Linters
       tree-sitter
-      nixfmt-rfc-style
+      nixfmt
       prettierd
       biome
       ruff
