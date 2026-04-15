@@ -33,6 +33,7 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.overlays = [ inputs.claude-code.overlays.default ];
 
   # homebrew installation manager
   nix-homebrew = {
@@ -43,8 +44,6 @@
 
   # home-manager config
   home-manager = {
-    # add claude-code overlay
-    nixpkgs.overlays = [ claude-code.overlays.default ];
     useGlobalPkgs = true;
     useUserPackages = true;
     users.${primaryUser} = {
