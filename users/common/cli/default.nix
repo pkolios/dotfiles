@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./claude-code.nix
     ./docker-compose.nix
     ./git.nix
     ./neovim
@@ -9,7 +10,6 @@
   ];
 
   home.packages = with pkgs; [
-    claude-code
     gnumake
     p7zip
     tree
