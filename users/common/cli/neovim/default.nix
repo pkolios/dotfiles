@@ -22,15 +22,11 @@
       ripgrep
       # LSP
       pyright
-      typescript-language-server
       gopls
-      astro-language-server
       rust-analyzer
       # Formatters / Linters
       tree-sitter
       nixfmt
-      prettierd
-      biome
       ruff
       stylua
       golangci-lint
