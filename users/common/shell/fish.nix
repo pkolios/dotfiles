@@ -4,6 +4,8 @@
 
   home.packages = with pkgs; [ any-nix-shell ];
 
+  # generateCaches slows down rebuilds
+  programs.man.generateCaches = false;
   programs.fish = {
     enable = true;
     interactiveShellInit = ''

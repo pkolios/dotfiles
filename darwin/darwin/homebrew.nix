@@ -4,12 +4,12 @@
     enable = true;
 
     onActivation = {
-      autoUpdate = false;
+      autoUpdate = true;
       upgrade = true;
       cleanup = "zap";
     };
 
-    caskArgs.no_quarantine = true;
+    # caskArgs.no_quarantine = true;
     global.brewfile = true;
 
     # homebrew is best for GUI apps
@@ -32,6 +32,7 @@
       "spotify"
       "google-chrome"
       "microsoft-excel"
+      "microsoft-word"
       "the-unarchiver"
       "kap"
     ];
