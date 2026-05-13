@@ -3,6 +3,7 @@
 {
   imports = [
     ./claude-code.nix
+    ./codex.nix
     ./docker-compose.nix
     ./git.nix
     ./neovim

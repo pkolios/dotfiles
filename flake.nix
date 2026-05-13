@@ -19,8 +19,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Always up-to-date Nix package for Claude Code
+    # Always up-to-date Nix packages for Claude Code & Codex-cli
     claude-code.url = "github:sadjow/claude-code-nix";
+    codex-cli-nix.url = "github:sadjow/codex-cli-nix";
   };
 
   outputs =
@@ -29,6 +30,7 @@
       nixpkgs,
       home-manager,
       claude-code,
+      codex-cli-nix,
       ...
     }@inputs:
     {
@@ -44,8 +46,11 @@
             home-manager.nixosModules.home-manager
             {
 
-              # add claude-code overlay
-              nixpkgs.overlays = [ claude-code.overlays.default ];
+              # add claude-code & codex overlay
+              nixpkgs.overlays = [
+                claude-code.overlays.default
+                codex-cli-nix.overlays.default
+              ];
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.enc = import ./users/enc/home.nix;
