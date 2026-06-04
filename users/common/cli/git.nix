@@ -51,6 +51,7 @@
     ignores = [
       "*~"
       "*.swp"
+      ".claude"
     ];
   };
 }
