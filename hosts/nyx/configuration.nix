@@ -19,6 +19,13 @@
   boot.loader.efi.canTouchEfiVariables = true;
   # Enable support for running non-native binaries via QEMU. This is required for running x86_64 binaries on aarch64, and vice versa.
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  # Cache for faster raspberry pi builds
+  nix.settings = {
+    extra-substituters = [ "https://nixos-raspberrypi.cachix.org" ];
+    extra-trusted-public-keys = [
+      "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
+    ];
+  };
 
   networking.hostName = "nyx"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
