@@ -34,6 +34,7 @@
       "microsoft-excel"
       "microsoft-word"
       "the-unarchiver"
+      "tailscale"
       "kap"
     ];
     # brews = [
