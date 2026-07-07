@@ -49,9 +49,10 @@
       set -g fish_pager_color_description $comment
       set -g fish_pager_color_selected_background --background=$selection
 
+      # Attach to the continuum-restored session; start a fresh one on cold start.
       if status is-interactive
       and not set -q TMUX
-        exec tmux attach
+        tmux attach; or exec tmux new-session
       end
     '';
     plugins = [ ];

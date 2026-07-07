@@ -11,6 +11,25 @@
     prefix = "C-x";
     escapeTime = 10;
 
+    plugins = with pkgs.tmuxPlugins; [
+      {
+        plugin = resurrect;
+        extraConfig = ''
+          # Restore pane contents and running programs (e.g. nvim) too.
+          set -g @resurrect-capture-pane-contents 'on'
+          set -g @resurrect-strategy-nvim 'session'
+        '';
+      }
+      {
+        plugin = continuum;
+        extraConfig = ''
+          # Auto-restore the last saved session when tmux starts (after a reboot).
+          set -g @continuum-restore 'on'
+          set -g @continuum-save-interval '5'
+        '';
+      }
+    ];
+
     extraConfig = ''
       set-option -g focus-events on
       set -g status-position top
@@ -77,9 +96,6 @@
       bind-key -T copy-mode-vi 'C-k' select-pane -U
       bind-key -T copy-mode-vi 'C-l' select-pane -R
       bind-key -T copy-mode-vi 'C-\' select-pane -l
-
-      # if run as "tmux attach", create a session if one does not already exist
-      new-session -n $HOST
     '';
   };
 }
