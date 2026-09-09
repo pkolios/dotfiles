@@ -28,6 +28,7 @@
       # other
       "keepassxc"
       "1password"
+      "gpg-suite-no-mail" # gpg + pinentry-mac for git-crypt (DNL local env)
       "dbeaver-community"
       "spotify"
       "google-chrome"

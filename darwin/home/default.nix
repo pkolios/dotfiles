@@ -4,6 +4,7 @@
     ../../users/common/cli
     ../../users/common/shell
     ./firefox.nix
+    ./dnl.nix
   ];
 
   home = {
