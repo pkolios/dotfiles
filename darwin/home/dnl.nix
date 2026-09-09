@@ -5,7 +5,10 @@ let
   dnlLocal = "${dnlRoot}/dnl_local";
 in
 {
-  home.packages = with pkgs; [ git-crypt ];
+  home.packages = with pkgs; [
+    git-crypt
+    git-lfs # keeps the LFS filter runnable outside a mise context, e.g. a fresh clone
+  ];
 
   home.sessionVariables = {
     DNL_ROOT = dnlRoot;
@@ -29,6 +32,16 @@ in
     config.lib.file.mkOutOfStoreSymlink "${dnlLocal}/direnv/direnvrc";
 
   programs.git = {
+    # annex_reader tracks models with LFS, and `make deps-mise-root` runs
+    # `git lfs install`, which wants the filter.lfs section in the global git
+    # config. That file is read-only here, so declare the section up front:
+    # git-lfs skips the write when the values already match. It only accepts
+    # the plain `git-lfs ...` form, hence package = null; the binary comes from
+    # home.packages above and from mise inside the checkouts.
+    lfs = {
+      enable = true;
+      package = null;
+    };
     settings.url."git@github.com:".insteadOf = [
       "https://github.com/"
       "git+https://github.com/"
