@@ -181,13 +181,19 @@
   # services.openssh.enable = true;
 
   # Unifi controller
-  services.unifi.enable = true;
+  services.unifi = {
+    enable = true;
+    unifiPackage = pkgs.unifi;
+    mongodbPackage = pkgs.mongodb-ce;
+    openFirewall = true;
+  };
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
     5173
     8000
     8080
+    8443 # Unifi controller
   ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
