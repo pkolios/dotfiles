@@ -37,6 +37,7 @@
       "the-unarchiver"
       "tailscale-app"
       "kap"
+      "crisp"
     ];
     # brews = [
     #   "docker"
