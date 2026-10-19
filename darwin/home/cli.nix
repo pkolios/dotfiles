@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     docker-compose
     gnumake
+    nodejs # npx for npm-distributed MCP servers (chrome-devtools plugin)
     p7zip
     tree
     wireguard-tools
