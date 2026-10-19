@@ -16,10 +16,6 @@
   # host-specific home-manager configuration
   home-manager.users.${primaryUser} = {
     home.packages = with pkgs; [
-      vim
-      git
-      nerd-fonts.iosevka
-      nerd-fonts.iosevka-term
       wget
       curl
     ];
