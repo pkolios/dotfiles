@@ -1,44 +1,31 @@
 {
   description = "My system configuration";
   inputs = {
-    # monorepo w/ recipes ("derivations")
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    # personal config: home-manager aspects (shell, git, neovim, zellij, ...)
+    # https://github.com/pkolios/inc-2 is private, so fetch over ssh
+    inc-2.url = "git+ssh://git@github.com/pkolios/inc-2";
 
-    # manages configs
-    home-manager.url = "github:nix-community/home-manager/master";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    # same nixpkgs & home-manager as inc-2, so its aspects build as there
+    nixpkgs.follows = "inc-2/nixpkgs";
+    home-manager.follows = "inc-2/home-manager";
 
     # system-level software and settings (macOS)
-    darwin.url = "github:lnl7/nix-darwin";
+    darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     # declarative homebrew management
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
-    # util that adds nix installed apps in osx spotlight
-    mac-app-util.url = "github:hraban/mac-app-util";
-
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Always up-to-date Nix packages for Claude Code & Codex-cli
-    claude-code.url = "github:sadjow/claude-code-nix";
-    codex-cli-nix.url = "github:sadjow/codex-cli-nix";
   };
 
   outputs =
     {
       self,
       darwin,
-      nixpkgs,
-      home-manager,
-      nix-homebrew,
-      mac-app-util,
-      firefox-addons,
-      claude-code,
-      codex-cli-nix,
       ...
     }@inputs:
     let
