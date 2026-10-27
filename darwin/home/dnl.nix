@@ -8,6 +8,7 @@ in
   home.packages = with pkgs; [
     git-crypt
     git-lfs # keeps the LFS filter runnable outside a mise context, e.g. a fresh clone
+    nss.tools # certutil, so `mkcert -install` reaches the Firefox profiles (dnl_local's `brew install nss`)
   ];
 
   home.sessionVariables = {
@@ -15,6 +16,11 @@ in
     DNL_LOCAL = dnlLocal;
     DNL_TOOLS = "${dnlLocal}/tools";
     DNL_CA_ROOT = "${dnlLocal}/ca_root";
+    # Public settings the CA and the Annex loopback allocator require. Same values
+    # as the darwin branch of dnl_local's onboarding block.
+    DNL_DOMAIN_LOCAL = "local.dnl.ai.127.0.0.1.nip.io";
+    DNL_LOOPBACK_BASE_IP = "127.0.0.1";
+    DNL_LOOPBACK_POOL_SIZE = "16";
   };
 
   programs.mise = {
